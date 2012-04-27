@@ -47,6 +47,36 @@
             
   <div class="section" id="exemple">
 <h1>Exemple<a class="headerlink" href="#exemple" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-python"><pre>include 'Genrsa.php';
+include 'Epmsi.php';
+
+$url = 'http://autoih.localhost/api.php';
+
+$genrsa = new Genrsa($url);
+$genrsa
+  -&gt;setPeriod('M0')
+  -&gt;setYear(2012)
+  -&gt;addFile('rss', 'rss.txt')
+  -&gt;addFile('autorisations', 'autorisations.txt')
+  -&gt;addFile('anohosp', 'anohosp.txt')
+  -&gt;launch()
+  -&gt;waitForStatus(array('SUCCESS', 'FAILURE'))
+;
+
+file_put_contents('export_genrsa.zip', $genrsa-&gt;getFile('exported_zip'));
+
+
+$epmsi = new Epmsi($url);
+$epmsi
+  -&gt;setPeriod('M0')
+  -&gt;setYear(2012)
+  -&gt;addFile('export_genrsa', 'export_genrsa.zip')
+  -&gt;launch()
+  -&gt;waitForStatus(array('SUCCESS', 'FAILURE'))
+;
+
+file_put_contents('export_epmsi.zip', $epmsi-&gt;getFile('exported_zip'));</pre>
+</div>
 </div>
 
 
