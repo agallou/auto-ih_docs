@@ -1,0 +1,15 @@
+rm -rf _build
+make html
+rm -rf .clone
+mkdir -v .clone
+cd  .clone
+git clone ../ .
+git branch gh-pages origin/gh-pages
+git checkout gh-pages
+rm -rf *
+cp -R ../_build/html/* ./
+git add -A
+git ci -m "Mise à jour gh-pages"
+git push origin gh-pages
+cd ../
+rm -rf .clone
