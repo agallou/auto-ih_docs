@@ -1,20 +1,33 @@
-.. auto-ih documentation master file, created by
-   sphinx-quickstart on Fri Apr 27 21:02:36 2012.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+documentation de auto-ih
+========================
 
-Welcome to auto-ih's documentation!
-===================================
 
-Contents:
+auto-ih permet d'automatiser l'utilisation de Genrsa et epmsi.
+
+
+Installation
+------------
+
+.. toctree::
+   :maxdepth: 2
+   
+   installation/lanceur_applications
+   installation/serveur_web
+
+
+Utilisation
+-----------
 
 .. toctree::
    :maxdepth: 2
 
-Indices and tables
-==================
+   utilisation/exemple
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
 
+Definition de l'API
+-------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   api/genrsa
