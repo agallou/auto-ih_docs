@@ -131,7 +131,9 @@ html_static_path = ['_static']
 #html_use_smartypants = True
 
 # Custom sidebar templates, maps document names to template names.
-#html_sidebars = {}
+html_sidebars = {
+ '**': ['localtoc.html', 'relations.html', 'sourcelink.html'],
+}
 
 # Additional templates that should be rendered to pages, maps page names to
 # template names.
@@ -141,7 +143,7 @@ html_static_path = ['_static']
 #html_domain_indices = True
 
 # If false, no index is generated.
-#html_use_index = True
+html_use_index = False
 
 # If true, the index is split into individual pages for each letter.
 #html_split_index = False
@@ -153,7 +155,7 @@ html_static_path = ['_static']
 #html_show_sphinx = True
 
 # If true, "(C) Copyright ..." is shown in the HTML footer. Default is True.
-#html_show_copyright = True
+html_show_copyright = False
 
 # If true, an OpenSearch description file will be output, and all pages will
 # contain a <link> tag referring to it.  The value of this option must be the
@@ -178,7 +180,7 @@ htmlhelp_basename = 'auto-ihdoc'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'auto-ih.tex', u'auto-ih Documentation',
+  ('index', 'auto-ih.tex', u'auto-ih documentation',
    u'Adrien Gallou', 'manual'),
 ]
 
@@ -211,7 +213,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'auto-ih', u'auto-ih Documentation',
+    ('index', 'auto-ih', u'auto-ih documentation',
      [u'Adrien Gallou'], 1)
 ]
 
