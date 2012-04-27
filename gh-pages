@@ -9,7 +9,7 @@ git checkout gh-pages
 rm -rf *
 cp -R ../_build/html/* ./
 git add -A
-git ci -m "Mise à jour gh-pages"
+git commit -m "Mise à jour gh-pages"
 git push origin gh-pages
 cd ../
 rm -rf .clone
