@@ -1,7 +1,7 @@
-Worker installation
-===================
+Lanceur d'applications
+======================
 
-Install 
+Il faut installer : 
 
 * genrsa
 * .net framework 3.5
