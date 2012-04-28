@@ -50,6 +50,18 @@ Code Libellé
 ==== ===============================
 
 
+Exemple utilisant CURL
+""""""""""""""""""""""
+
+Appel : ::
+
+    curl -F rss=@rum.txt -F autorisations=@autorisations.txt -F anohosp=@anohosp.txt http://autoih.localhost/api.php/genrsa/2012/send
+
+Retour : ::
+
+    {"status":0,"message":"OK","content":{"id":"8c43201682751d9403a335b3dd0eb670"}}
+
+
 /genrsa/2012/:id/status
 -----------------------
 
@@ -87,6 +99,17 @@ Succès
 |         | * RUNNING |
 |         | * ERROR   |
 +---------+-----------+          
+
+Exemple utilisant CURL
+""""""""""""""""""""""
+
+Appel : ::
+
+  curl  http://autoih.localhost/api.php/genrsa/2012/69a7d9f2c4560159d39731b3c91515a5/status
+
+Retour : ::
+
+  {"status":0,"message":"OK","content":{"status":"RUNNING"}}
 
 
 /genrsa/2012/:id/file/:type
