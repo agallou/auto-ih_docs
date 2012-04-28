@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Genrsa &mdash; auto-ih v0.1 documentation</title>
+    <title>e-PMSI &mdash; auto-ih v0.1 documentation</title>
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -23,18 +23,18 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="auto-ih v0.1 documentation" href="../index.html" />
-    <link rel="next" title="e-PMSI" href="epmsi.html" />
-    <link rel="prev" title="Serveur Web" href="../installation/serveur_web.html" /> 
+    <link rel="next" title="Client API php" href="../clients/php.html" />
+    <link rel="prev" title="Genrsa" href="genrsa.html" /> 
   </head>
   <body>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="epmsi.html" title="e-PMSI"
+          <a href="../clients/php.html" title="Client API php"
              accesskey="N">next</a></li>
         <li class="right" >
-          <a href="../installation/serveur_web.html" title="Serveur Web"
+          <a href="genrsa.html" title="Genrsa"
              accesskey="P">previous</a> |</li>
         <li><a href="../index.html">auto-ih v0.1 documentation</a> &raquo;</li> 
       </ul>
@@ -45,13 +45,13 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="genrsa">
-<h1>Genrsa<a class="headerlink" href="#genrsa" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="genrsa-2012-send">
-<h2>/genrsa/2012/send<a class="headerlink" href="#genrsa-2012-send" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="e-pmsi">
+<h1>e-PMSI<a class="headerlink" href="#e-pmsi" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="epmsi-2012-send">
+<h2>/epmsi/2012/send<a class="headerlink" href="#epmsi-2012-send" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="description">
 <h3>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h3>
-<p>Envoi des fichiers pour passage dans GENRSA.</p>
+<p>Envoie un fichier sur e-PMSI</p>
 </div>
 <div class="section" id="type">
 <h3>Type<a class="headerlink" href="#type" title="Permalink to this headline">¶</a></h3>
@@ -61,8 +61,8 @@
 <h3>Fichiers<a class="headerlink" href="#fichiers" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
 <colgroup>
-<col width="36%" />
-<col width="64%" />
+<col width="31%" />
+<col width="69%" />
 </colgroup>
 <thead valign="bottom">
 <tr><th class="head">Argument</th>
@@ -70,14 +70,8 @@
 </tr>
 </thead>
 <tbody valign="top">
-<tr><td>rss</td>
-<td>Fichier de RUM</td>
-</tr>
-<tr><td>autorisations</td>
-<td>Fichier d&#8217;autorisations</td>
-</tr>
-<tr><td>anohosp</td>
-<td>Fichier ANOHOSP</td>
+<tr><td>export_genrsa</td>
+<td>Fichier ZIP exporté de GENRSA</td>
 </tr>
 </tbody>
 </table>
@@ -107,8 +101,8 @@
 <h4>Erreur<a class="headerlink" href="#erreur" title="Permalink to this headline">¶</a></h4>
 <table border="1" class="docutils">
 <colgroup>
-<col width="11%" />
-<col width="89%" />
+<col width="10%" />
+<col width="90%" />
 </colgroup>
 <thead valign="bottom">
 <tr><th class="head">Code</th>
@@ -117,13 +111,7 @@
 </thead>
 <tbody valign="top">
 <tr><td>1</td>
-<td>Fichier de RUM manquant</td>
-</tr>
-<tr><td>2</td>
-<td>Fichier d&#8217;autorsations manquant</td>
-</tr>
-<tr><td>3</td>
-<td>Fichier ANOHOSP manquant</td>
+<td>Fichier de exporté de GENRSA manquant</td>
 </tr>
 </tbody>
 </table>
@@ -131,7 +119,7 @@
 <div class="section" id="exemple-utilisant-curl">
 <h4>Exemple utilisant CURL<a class="headerlink" href="#exemple-utilisant-curl" title="Permalink to this headline">¶</a></h4>
 <p>Appel :</p>
-<div class="highlight-python"><pre>curl -F rss=@rum.txt -F autorisations=@autorisations.txt -F anohosp=@anohosp.txt http://autoih.localhost/api.php/genrsa/2012/send</pre>
+<div class="highlight-python"><pre>curl -F export_genrsa=@export_genrsa.zip http://autoih.localhost/api.php/epmsi/2012/send</pre>
 </div>
 <p>Retour :</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">{</span><span class="s">&quot;status&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s">&quot;message&quot;</span><span class="p">:</span><span class="s">&quot;OK&quot;</span><span class="p">,</span><span class="s">&quot;content&quot;</span><span class="p">:{</span><span class="s">&quot;id&quot;</span><span class="p">:</span><span class="s">&quot;8c43201682751d9403a335b3dd0eb670&quot;</span><span class="p">}}</span>
@@ -140,11 +128,11 @@
 </div>
 </div>
 </div>
-<div class="section" id="genrsa-2012-id-status">
-<h2>/genrsa/2012/:id/status<a class="headerlink" href="#genrsa-2012-id-status" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="epmsi-2012-id-status">
+<h2>/epmsi/2012/:id/status<a class="headerlink" href="#epmsi-2012-id-status" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id1">
 <h3>Description<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<p>Statut du passage des fichiers dans GENRSA.</p>
+<p>Statut du passage des fichiers sur e-PMSI.</p>
 </div>
 <div class="section" id="id2">
 <h3>Type<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
@@ -164,7 +152,7 @@
 </thead>
 <tbody valign="top">
 <tr><td>id</td>
-<td>id renvoyé par l&#8217;api /genrsa/2012/:id/send</td>
+<td>id renvoyé par l&#8217;api /epmsi/2012/:id/send</td>
 </tr>
 </tbody>
 </table>
@@ -199,7 +187,7 @@
 <div class="section" id="id5">
 <h4>Exemple utilisant CURL<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
 <p>Appel :</p>
-<div class="highlight-python"><pre>curl  http://autoih.localhost/api.php/genrsa/2012/69a7d9f2c4560159d39731b3c91515a5/status</pre>
+<div class="highlight-python"><pre>curl  http://autoih.localhost/api.php/epmsi/2012/69a7d9f2c4560159d39731b3c91515a5/status</pre>
 </div>
 <p>Retour :</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">{</span><span class="s">&quot;status&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s">&quot;message&quot;</span><span class="p">:</span><span class="s">&quot;OK&quot;</span><span class="p">,</span><span class="s">&quot;content&quot;</span><span class="p">:{</span><span class="s">&quot;status&quot;</span><span class="p">:</span><span class="s">&quot;RUNNING&quot;</span><span class="p">}}</span>
@@ -208,11 +196,11 @@
 </div>
 </div>
 </div>
-<div class="section" id="genrsa-2012-id-file-type">
-<h2>/genrsa/2012/:id/file/:type<a class="headerlink" href="#genrsa-2012-id-file-type" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="epmsi-2012-id-file-type">
+<h2>/epmsi/2012/:id/file/:type<a class="headerlink" href="#epmsi-2012-id-file-type" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id6">
 <h3>Description<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
-<p>Renvoi le fichier ZIP en sortie de GENRSA.</p>
+<p>Renvoi le fichier ZIP contenant les exports HTML de e-PMSI.</p>
 </div>
 <div class="section" id="id7">
 <h3>Type<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
@@ -229,8 +217,8 @@
         <div class="sphinxsidebarwrapper">
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Genrsa</a><ul>
-<li><a class="reference internal" href="#genrsa-2012-send">/genrsa/2012/send</a><ul>
+<li><a class="reference internal" href="#">e-PMSI</a><ul>
+<li><a class="reference internal" href="#epmsi-2012-send">/epmsi/2012/send</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#type">Type</a></li>
 <li><a class="reference internal" href="#fichiers">Fichiers</a></li>
@@ -242,7 +230,7 @@
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#genrsa-2012-id-status">/genrsa/2012/:id/status</a><ul>
+<li><a class="reference internal" href="#epmsi-2012-id-status">/epmsi/2012/:id/status</a><ul>
 <li><a class="reference internal" href="#id1">Description</a></li>
 <li><a class="reference internal" href="#id2">Type</a></li>
 <li><a class="reference internal" href="#parametres">Paramètres</a></li>
@@ -253,7 +241,7 @@
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#genrsa-2012-id-file-type">/genrsa/2012/:id/file/:type</a><ul>
+<li><a class="reference internal" href="#epmsi-2012-id-file-type">/epmsi/2012/:id/file/:type</a><ul>
 <li><a class="reference internal" href="#id6">Description</a></li>
 <li><a class="reference internal" href="#id7">Type</a></li>
 </ul>
@@ -263,14 +251,14 @@
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../installation/serveur_web.html"
-                        title="previous chapter">Serveur Web</a></p>
+  <p class="topless"><a href="genrsa.html"
+                        title="previous chapter">Genrsa</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="epmsi.html"
-                        title="next chapter">e-PMSI</a></p>
+  <p class="topless"><a href="../clients/php.html"
+                        title="next chapter">Client API php</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
-    <li><a href="../_sources/api/genrsa.txt"
+    <li><a href="../_sources/api/epmsi.txt"
            rel="nofollow">Show Source</a></li>
   </ul>
         </div>
@@ -281,10 +269,10 @@
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="epmsi.html" title="e-PMSI"
+          <a href="../clients/php.html" title="Client API php"
              >next</a></li>
         <li class="right" >
-          <a href="../installation/serveur_web.html" title="Serveur Web"
+          <a href="genrsa.html" title="Genrsa"
              >previous</a> |</li>
         <li><a href="../index.html">auto-ih v0.1 documentation</a> &raquo;</li> 
       </ul>

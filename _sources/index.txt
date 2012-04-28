@@ -22,6 +22,7 @@ Definition de l'API
    :maxdepth: 2
 
    api/genrsa
+   api/epmsi
 
 
 Client API
