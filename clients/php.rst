@@ -3,8 +3,9 @@ Client API php
 
 Le client PHP se trouve sur `Github <https://github.com/agallou/auto-ih_php-api>`_
 
-::
+.. code-block:: php
 
+  <?php
     include 'Genrsa.php';
     include 'Epmsi.php';
 
