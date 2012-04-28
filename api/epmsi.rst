@@ -1,13 +1,13 @@
-Genrsa
+e-PMSI
 ======
 
-/genrsa/2012/send
+/epmsi/2012/send
 -----------------
 
 Description
 ^^^^^^^^^^^
 
-Envoi des fichiers pour passage dans GENRSA.
+Envoi un fichier sur e-PMSI
 
 Type
 ^^^^
@@ -17,13 +17,11 @@ POST
 Fichiers
 ^^^^^^^^^
 
-============= =======================
+============= =============================
 Argument      Libellé
-============= =======================
-rss           Fichier de RUM
-autorisations Fichier d'autorisations
-anohosp       Fichier ANOHOSP
-============= =======================
+============= =============================
+export_genrsa Fichier ZIP exporté de GENRSA
+============= =============================
 
 
 Retour
@@ -41,22 +39,20 @@ id        id du traitement, à réutiliser lors des autres appels à l'API.
 Erreur
 """"""
 
-==== ===============================
+==== =====================================
 Code Libellé
-==== ===============================
-1    Fichier de RUM manquant
-2    Fichier d'autorsations manquant
-3    Fichier ANOHOSP manquant
-==== ===============================
+==== =====================================
+1    Fichier de exporté de GENRSA manquant
+==== =====================================
 
 
-/genrsa/2012/:id/status
+/epmsi/2012/:id/status
 -----------------------
 
 Description
 ^^^^^^^^^^^
 
-Statut du passage des fichiers dans GENRSA.
+Statut du passage des fichiers sur e-PMSI.
 
 Type
 ^^^^
@@ -69,7 +65,7 @@ Paramètres
 ========= ==========================================
 Paramètre 
 ========= ==========================================
-id        id renvoyé par l'api /genrsa/2012/:id/send
+id        id renvoyé par l'api /epmsi/2012/:id/send
 ========= ==========================================
 
 
@@ -86,17 +82,17 @@ Succès
 |         | * WAITING |
 |         | * RUNNING |
 |         | * ERROR   |
-+---------+-----------+          
++---------+-----------+
 
 
-/genrsa/2012/:id/file/:type
+/epmsi/2012/:id/file/:type
 ---------------------------
 
 
 Description
 ^^^^^^^^^^^
 
-Renvoi le fichier ZIP en sortie de GENRSA.
+Renvoi le fichier ZIP contenant les exports HTML de e-PMSI.
 
 Type
 ^^^^
