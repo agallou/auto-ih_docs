@@ -1,16 +1,16 @@
 Serveur Web
 ===========
 
-Prérequis
+Prérequis :
 
 * php
 * git
 
 
-Récupérer composer : 
+Récupérer composer::
 
     curl -s http://getcomposer.org/installer | php
 
-Puis installer les dépendances
+Puis installer les dépendances::
 
     php composer.phar install

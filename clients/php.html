@@ -1,0 +1,112 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Client API php &mdash; auto-ih v0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="auto-ih v0.1 documentation" href="../index.html" />
+    <link rel="prev" title="Genrsa" href="../api/genrsa.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../api/genrsa.html" title="Genrsa"
+             accesskey="P">previous</a></li>
+        <li><a href="../index.html">auto-ih v0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="client-api-php">
+<h1>Client API php<a class="headerlink" href="#client-api-php" title="Permalink to this headline">¶</a></h1>
+<p>Le client PHP se trouve sur <a class="reference external" href="https://github.com/agallou/auto-ih_php-api">Github</a></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+  <span class="k">include</span> <span class="s1">&#39;Genrsa.php&#39;</span><span class="p">;</span>
+  <span class="k">include</span> <span class="s1">&#39;Epmsi.php&#39;</span><span class="p">;</span>
+
+  <span class="nv">$url</span> <span class="o">=</span> <span class="s1">&#39;http://autoih.localhost/api.php&#39;</span><span class="p">;</span>
+
+  <span class="nv">$genrsa</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Genrsa</span><span class="p">(</span><span class="nv">$url</span><span class="p">);</span>
+  <span class="nv">$genrsa</span>
+    <span class="o">-&gt;</span><span class="na">setPeriod</span><span class="p">(</span><span class="s1">&#39;M0&#39;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">setYear</span><span class="p">(</span><span class="mi">2012</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">addFile</span><span class="p">(</span><span class="s1">&#39;rss&#39;</span><span class="p">,</span> <span class="s1">&#39;rss.txt&#39;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">addFile</span><span class="p">(</span><span class="s1">&#39;autorisations&#39;</span><span class="p">,</span> <span class="s1">&#39;autorisations.txt&#39;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">addFile</span><span class="p">(</span><span class="s1">&#39;anohosp&#39;</span><span class="p">,</span> <span class="s1">&#39;anohosp.txt&#39;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">launch</span><span class="p">()</span>
+    <span class="o">-&gt;</span><span class="na">waitForStatus</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;SUCCESS&#39;</span><span class="p">,</span> <span class="s1">&#39;FAILURE&#39;</span><span class="p">))</span>
+  <span class="p">;</span>
+
+  <span class="nb">file_put_contents</span><span class="p">(</span><span class="s1">&#39;export_genrsa.zip&#39;</span><span class="p">,</span> <span class="nv">$genrsa</span><span class="o">-&gt;</span><span class="na">getFile</span><span class="p">(</span><span class="s1">&#39;exported_zip&#39;</span><span class="p">));</span>
+
+
+  <span class="nv">$epmsi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Epmsi</span><span class="p">(</span><span class="nv">$url</span><span class="p">);</span>
+  <span class="nv">$epmsi</span>
+    <span class="o">-&gt;</span><span class="na">setPeriod</span><span class="p">(</span><span class="s1">&#39;M0&#39;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">setYear</span><span class="p">(</span><span class="mi">2012</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">addFile</span><span class="p">(</span><span class="s1">&#39;export_genrsa&#39;</span><span class="p">,</span> <span class="s1">&#39;export_genrsa.zip&#39;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">launch</span><span class="p">()</span>
+    <span class="o">-&gt;</span><span class="na">waitForStatus</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;SUCCESS&#39;</span><span class="p">,</span> <span class="s1">&#39;FAILURE&#39;</span><span class="p">))</span>
+  <span class="p">;</span>
+
+  <span class="nb">file_put_contents</span><span class="p">(</span><span class="s1">&#39;export_epmsi.zip&#39;</span><span class="p">,</span> <span class="nv">$epmsi</span><span class="o">-&gt;</span><span class="na">getFile</span><span class="p">(</span><span class="s1">&#39;exported_zip&#39;</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../api/genrsa.html"
+                        title="previous chapter">Genrsa</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/clients/php.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../api/genrsa.html" title="Genrsa"
+             >previous</a></li>
+        <li><a href="../index.html">auto-ih v0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>
