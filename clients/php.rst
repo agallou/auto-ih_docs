@@ -1,5 +1,7 @@
-Exemple
-=======
+Client API php
+==============
+
+Le client PHP se trouve sur `Github <https://github.com/agallou/auto-ih_php-api>`_
 
 ::
 
