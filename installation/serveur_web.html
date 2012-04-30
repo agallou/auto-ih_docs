@@ -58,6 +58,21 @@
 <p>Puis installer les dépendances:</p>
 <div class="highlight-python"><pre>php composer.phar install</pre>
 </div>
+<p>Exemple utilisation virtualhost:</p>
+<div class="highlight-python"><pre>NameVirtualHost *
+&lt;VirtualHost *&gt;
+
+    ServerName autoih.localhost
+    ServerAdmin webmaster@localhost
+
+    DocumentRoot /pathtoautoih/www
+    DirectoryIndex index.php
+    &lt;Directory "/pathtoautoih/www"&gt;
+        AllowOverride All
+        Allow from All
+    &lt;/Directory&gt;
+&lt;/VirtualHost&gt;</pre>
+</div>
 </div>
 
 
