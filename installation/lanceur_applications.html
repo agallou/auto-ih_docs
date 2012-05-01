@@ -54,8 +54,22 @@
 <li><a class="reference external" href="http://sahi.co.in/w/">sahi</a></li>
 <li><a class="reference external" href="http://windows.php.net/download/">php</a></li>
 </ul>
+<div class="section" id="configurer-sahi">
+<h2>Configurer sahi<a class="headerlink" href="#configurer-sahi" title="Permalink to this headline">¶</a></h2>
+<p>dans le fichier:</p>
+<div class="highlight-python"><pre>%appdata%/sahi/userdata/config/userdata.properties</pre>
+</div>
+<p>ajouter:</p>
+<div class="highlight-python"><pre>keytool.path=C:\Program Files\Java\jre6\bin\keytool.exe</pre>
+</div>
+<p>pour permettre d&#8217;accéder aux sites en https.</p>
+<p>Démarrer ensuite le navigateur via sahi et accéder une fois à epmsi pour autoriser les certificats.</p>
+</div>
+<div class="section" id="lancement">
+<h2>Lancement<a class="headerlink" href="#lancement" title="Permalink to this headline">¶</a></h2>
 <p>Lancer le worker:</p>
 <div class="highlight-python"><pre>SET PHP_PATH="C:\Program Files\PHP\php.exe" &amp;&amp; .\data\run.bat</pre>
+</div>
 </div>
 </div>
 
@@ -65,6 +79,15 @@
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Lanceur d&#8217;applications</a><ul>
+<li><a class="reference internal" href="#configurer-sahi">Configurer sahi</a></li>
+<li><a class="reference internal" href="#lancement">Lancement</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
   <p class="topless"><a href="../index.html"
                         title="previous chapter">documentation de auto-ih</a></p>
