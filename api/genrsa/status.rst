@@ -18,7 +18,7 @@ Paramètres
 Paramètre 
 ========= ============================================
 annee     Années supportées 2011, 2012.
-id        id renvoyé par l'api /genrsa/:annee/:id/send
+id        id renvoyé par l'api :doc:`send`
 ========= ============================================
 
 
