@@ -1,8 +1,8 @@
 Genrsa
 ======
 
-/genrsa/2012/send
------------------
+/genrsa/:annee/send
+-------------------
 
 Description
 ^^^^^^^^^^^
@@ -13,6 +13,16 @@ Type
 ^^^^
 
 POST
+
+Paramètres
+^^^^^^^^^^
+
+========= =============================
+Paramètre Libellé
+========= =============================
+annee     Années supportées 2011, 2012.
+========= =============================
+
 
 Fichiers
 ^^^^^^^^^
@@ -50,8 +60,8 @@ Code Libellé
 ==== ===============================
 
 
-Exemple utilisant CURL
-""""""""""""""""""""""
+Exemple
+"""""""
 
 Appel : ::
 
@@ -62,8 +72,8 @@ Retour : ::
     {"status":0,"message":"OK","content":{"id":"8c43201682751d9403a335b3dd0eb670"}}
 
 
-/genrsa/2012/:id/status
------------------------
+/genrsa/:annee/:id/status
+-------------------------
 
 Description
 ^^^^^^^^^^^
@@ -78,11 +88,12 @@ GET
 Paramètres
 ^^^^^^^^^^
 
-========= ==========================================
+========= ============================================
 Paramètre 
-========= ==========================================
-id        id renvoyé par l'api /genrsa/2012/:id/send
-========= ==========================================
+========= ============================================
+annee     Années supportées 2011, 2012.
+id        id renvoyé par l'api /genrsa/:annee/:id/send
+========= ============================================
 
 
 Retour
@@ -100,8 +111,8 @@ Succès
 |         | * ERROR   |
 +---------+-----------+          
 
-Exemple utilisant CURL
-""""""""""""""""""""""
+Exemple
+"""""""
 
 Appel : ::
 
@@ -112,7 +123,7 @@ Retour : ::
   {"status":0,"message":"OK","content":{"status":"RUNNING"}}
 
 
-/genrsa/2012/:id/file/:type
+/genrsa/:annee/:id/file/:type
 ---------------------------
 
 
@@ -125,3 +136,16 @@ Type
 ^^^^
 
 GET
+
+Paramètres
+^^^^^^^^^^
+
+========= ============================================
+Paramètre 
+========= ============================================
+annee     Années supportées 2011, 2012.
+id        id renvoyé par l'api /genrsa/:annee/:id/send
+type      exported_zip
+========= ============================================
+
+
