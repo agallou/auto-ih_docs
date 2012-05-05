@@ -1,8 +1,8 @@
 e-PMSI
 ======
 
-/epmsi/2012/send
------------------
+/epmsi/:annee/send
+------------------
 
 Description
 ^^^^^^^^^^^
@@ -14,8 +14,19 @@ Type
 
 POST
 
+Paramètres
+^^^^^^^^^^
+
+
+========= =============================
+Paramètre Libellé
+========= =============================
+annee     Années supportées 2011, 2012.
+========= =============================
+
+
 Fichiers
-^^^^^^^^^
+^^^^^^^^
 
 ============= =============================
 Argument      Libellé
@@ -45,8 +56,8 @@ Code Libellé
 1    Fichier de exporté de GENRSA manquant
 ==== =====================================
 
-Exemple utilisant CURL
-""""""""""""""""""""""
+Exemple
+^^^^^^^
 
 Appel : ::
 
@@ -57,8 +68,8 @@ Retour : ::
     {"status":0,"message":"OK","content":{"id":"8c43201682751d9403a335b3dd0eb670"}}
 
 
-/epmsi/2012/:id/status
------------------------
+/epmsi/:annee/:id/status
+------------------------
 
 Description
 ^^^^^^^^^^^
@@ -73,18 +84,19 @@ GET
 Paramètres
 ^^^^^^^^^^
 
-========= ==========================================
+========= ===========================================
 Paramètre 
-========= ==========================================
-id        id renvoyé par l'api /epmsi/2012/:id/send
-========= ==========================================
+========= ===========================================
+annee     Années supportées 2011, 2012.
+id        id renvoyé par l'api /epmsi/:annee/:id/send
+========= ===========================================
 
 
 Retour
 ^^^^^^
 
 Succès
-"""""""
+""""""
 
 +---------+-----------+
 |Paramètre|Libellé    |
@@ -96,8 +108,8 @@ Succès
 +---------+-----------+
 
 
-Exemple utilisant CURL
-""""""""""""""""""""""
+Exemple
+^^^^^^^
 
 Appel : ::
 
@@ -108,7 +120,7 @@ Retour : ::
   {"status":0,"message":"OK","content":{"status":"RUNNING"}}
 
 
-/epmsi/2012/:id/file/:type
+/epmsi/:annee/:id/file/:type
 ---------------------------
 
 
@@ -121,3 +133,16 @@ Type
 ^^^^
 
 GET
+
+Paramètres
+^^^^^^^^^^
+
+========= ===========================================
+Paramètre 
+========= ===========================================
+annee     Années supportées 2011, 2012.
+id        id renvoyé par l'api /epmsi/:annee/:id/send
+type      exported_zip
+========= ===========================================
+
+
