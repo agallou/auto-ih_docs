@@ -1,6 +1,9 @@
 Lanceur d'applications
 ======================
 
+Installation dépendances
+------------------------
+
 Il faut installer : 
 
 * `genrsa <http://download.atih.sante.fr/index.php?lettre=G>`_
@@ -9,8 +12,8 @@ Il faut installer :
 * `php <http://windows.php.net/download/>`_
 
 
-Configurer sahi
----------------
+Configuration sahi
+------------------
 
 dans le fichier::
 
@@ -24,6 +27,27 @@ pour permettre d'accéder aux sites en https.
 
 Démarrer ensuite le navigateur via sahi et accéder une fois à epmsi pour autoriser les certificats.
 
+
+Configuration auto-ih
+---------------------
+
+auto-ih se configure via un fichier YAML, celui-ci doit être placé dans config/configuration.yml.
+
+Ci-dessous un exemple de configuration.
+
+.. code-block:: yaml
+
+  genrsa_working_dir: "/media/autoih_worker/genrsa/"
+  epmsi_working_dir: "/media/autoih_worker/epmsi/"
+  sahi_userdata: "C:\Documents and Settings\Administrateur\sahi\userdata"
+  sahi_host: "localhost"
+  epmsi_user: "userid"
+  epmsi_password: "password"
+  worker_epmsi_dir: 'X:\epmsi'
+  worker_genrsa_dir: 'X:\genrsa'
+  genrsa_2012_path: 'C:\Program Files\POP-T2A\GENRSA\WGENRSA.exe'
+  genrsa_2011_path: 'C:\Program Files\POP-T2A\GENRSA_2011\WGENRSA.exe'
+  finess: "000000000"
 
 Lancement
 ---------
