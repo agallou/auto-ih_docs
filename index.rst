@@ -10,7 +10,8 @@ Installation
 
 .. toctree::
    :maxdepth: 2
-   
+ 
+   installation/principes
    installation/lanceur_applications
    installation/serveur_web
 
