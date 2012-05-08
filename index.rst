@@ -1,9 +1,9 @@
 documentation de auto-ih
 ========================
 
-auto-ih permet d'automatiser l'utilisation de Genrsa et epmsi.
+auto-ih permet d'automatiser l'utilisation de GENRSA et e-PMSI.
 
-Le code source se trouve sur github : `https://github.com/agallou/auto-ih <https://github.com/agallou/auto-ih>`_
+Le code source se trouve sur github : `<https://github.com/agallou/auto-ih>`_.
 
 Installation
 ------------
@@ -16,7 +16,7 @@ Installation
    installation/serveur_web
 
 
-Definition de l'API
+Définition de l'API
 -------------------
 
 .. toctree::

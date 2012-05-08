@@ -25,14 +25,14 @@ Ci-dessous un exemple de configuration.
 genrsa_working_dir
 ------------------
 
-Chemin vers le dossier ou déposer les fichiers envoyés à l'API genrsa. Doit être accessible en ecriture par apache.
+Chemin vers le dossier ou déposer les fichiers envoyés à l'API GENRSA. Doit être accessible en ecriture par apache.
 
 .. _epmsi_working_dir:
 
 epmsi_working_dir
 -----------------
 
-Chemin vers le dossier ou déposer les fichiers envoyés à l'API epmsi. Doit être accessible en ecriture par apache.
+Chemin vers le dossier ou déposer les fichiers envoyés à l'API e-PMSI. Doit être accessible en ecriture par apache.
 
 sahi_userdata
 -------------
