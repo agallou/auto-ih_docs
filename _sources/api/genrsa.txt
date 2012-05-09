@@ -1,4 +1,4 @@
-Genrsa
+GENRSA
 ======
 
 .. toctree::

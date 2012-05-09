@@ -23,18 +23,18 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <link rel="top" title="Documentation auto-ih" href="../index.html" />
-    <link rel="next" title="Serveur Web" href="serveur_web.html" />
-    <link rel="prev" title="documentation de auto-ih" href="../index.html" /> 
+    <link rel="next" title="Installation dépendances" href="lanceur/dependances.html" />
+    <link rel="prev" title="Principes" href="principes.html" /> 
   </head>
   <body>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="serveur_web.html" title="Serveur Web"
+          <a href="lanceur/dependances.html" title="Installation dépendances"
              accesskey="N">suivant</a></li>
         <li class="right" >
-          <a href="../index.html" title="documentation de auto-ih"
+          <a href="principes.html" title="Principes"
              accesskey="P">précédent</a> |</li>
         <li><a href="../index.html">Documentation auto-ih</a> &raquo;</li> 
       </ul>
@@ -47,29 +47,33 @@
             
   <div class="section" id="lanceur-d-applications">
 <h1>Lanceur d&#8217;applications<a class="headerlink" href="#lanceur-d-applications" title="Lien permanent vers ce titre">¶</a></h1>
-<p>Il faut installer :</p>
-<ul class="simple">
-<li><a class="reference external" href="http://download.atih.sante.fr/index.php?lettre=G">genrsa</a></li>
-<li><a class="reference external" href="http://www.microsoft.com/downloads/fr-fr/details.aspx?familyid=333325fd-ae52-4e35-b531-508d977d32a6">.net framework 3.5</a></li>
-<li><a class="reference external" href="http://sahi.co.in/w/">sahi</a></li>
-<li><a class="reference external" href="http://windows.php.net/download/">php</a></li>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="lanceur/dependances.html">Installation dépendances</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="lanceur/dependances.html#net-framework">.NET Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lanceur/dependances.html#php">PHP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lanceur/dependances.html#firefox">Firefox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lanceur/dependances.html#sahi">Sahi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lanceur/dependances.html#genrsa">GENRSA</a></li>
 </ul>
-<div class="section" id="configurer-sahi">
-<h2>Configurer sahi<a class="headerlink" href="#configurer-sahi" title="Lien permanent vers ce titre">¶</a></h2>
-<p>dans le fichier:</p>
-<div class="highlight-python"><pre>%appdata%/sahi/userdata/config/userdata.properties</pre>
-</div>
-<p>ajouter:</p>
-<div class="highlight-python"><pre>keytool.path=C:\Program Files\Java\jre6\bin\keytool.exe</pre>
-</div>
-<p>pour permettre d&#8217;accéder aux sites en https.</p>
-<p>Démarrer ensuite le navigateur via sahi et accéder une fois à epmsi pour autoriser les certificats.</p>
-</div>
-<div class="section" id="lancement">
-<h2>Lancement<a class="headerlink" href="#lancement" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Lancer le worker:</p>
-<div class="highlight-python"><pre>SET PHP_PATH="C:\Program Files\PHP\php.exe" &amp;&amp; .\data\run.bat</pre>
-</div>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="lanceur/sahi.html">Configuration sahi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lanceur/autoih.html">Configuration auto-ih</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="lanceur/autoih.html#genrsa-working-dir">genrsa_working_dir</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lanceur/autoih.html#epmsi-working-dir">epmsi_working_dir</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lanceur/autoih.html#sahi-userdata">sahi_userdata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lanceur/autoih.html#sahi-host">sahi_host</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lanceur/autoih.html#epmsi-user">epmsi_user</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lanceur/autoih.html#epmsi-password">epmsi_password</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lanceur/autoih.html#worker-epmsi-dir">worker_epmsi_dir</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lanceur/autoih.html#worker-genrsa-dir">worker_genrsa_dir</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lanceur/autoih.html#genrsa-2012-path">genrsa_2012_path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lanceur/autoih.html#genrsa-2011-path">genrsa_2011_path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lanceur/autoih.html#finess">finess</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="lanceur/lancement.html">Lancement</a></li>
+</ul>
 </div>
 </div>
 
@@ -79,21 +83,12 @@
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../index.html">Table des matières</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">Lanceur d&#8217;applications</a><ul>
-<li><a class="reference internal" href="#configurer-sahi">Configurer sahi</a></li>
-<li><a class="reference internal" href="#lancement">Lancement</a></li>
-</ul>
-</li>
-</ul>
-
   <h4>Sujet précédent</h4>
-  <p class="topless"><a href="../index.html"
-                        title="Chapitre précédent">documentation de auto-ih</a></p>
+  <p class="topless"><a href="principes.html"
+                        title="Chapitre précédent">Principes</a></p>
   <h4>Sujet suivant</h4>
-  <p class="topless"><a href="serveur_web.html"
-                        title="Chapitre suivant">Serveur Web</a></p>
+  <p class="topless"><a href="lanceur/dependances.html"
+                        title="Chapitre suivant">Installation dépendances</a></p>
         </div>
       </div>
       <div class="clearer"></div>
@@ -102,10 +97,10 @@
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="serveur_web.html" title="Serveur Web"
+          <a href="lanceur/dependances.html" title="Installation dépendances"
              >suivant</a></li>
         <li class="right" >
-          <a href="../index.html" title="documentation de auto-ih"
+          <a href="principes.html" title="Principes"
              >précédent</a> |</li>
         <li><a href="../index.html">Documentation auto-ih</a> &raquo;</li> 
       </ul>
