@@ -1,10 +1,10 @@
-/epmsi/:annee/M0/:id/status
+/epmsi/mat2a/mco_stc/:annee/M0/:id/status
 ===========================
 
 Description
 -----------
 
-Statut du passage des fichiers sur e-PMSI.
+Statut du passage des fichiers sur e-PMSI (MAT2A MCO)
 
 Type
 ----
@@ -17,7 +17,7 @@ Paramètres
 ========= ===========================================
 Paramètre 
 ========= ===========================================
-annee     Années supportées 2011, 2012.
+annee     Années supportées : 2011, 2012.
 id        id renvoyé par l'api :doc:`send`
 ========= ===========================================
 
@@ -43,7 +43,7 @@ Exemple
 
 Appel : ::
 
-  curl  http://autoih.localhost/api.php/epmsi/2012/M0/69a7d9f2c4560159d39731b3c91515a5/status
+  curl  http://autoih.localhost/api.php/epmsi/mat2a/mco_stc/2012/M0/69a7d9f2c4560159d39731b3c91515a5/status
 
 Retour : ::
 

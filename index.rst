@@ -24,7 +24,7 @@ Définition de l'API
 
    api/genrsa
    api/paprica
-   api/epmsi
+   api/mat2a_mco_stc
 
 
 Client API

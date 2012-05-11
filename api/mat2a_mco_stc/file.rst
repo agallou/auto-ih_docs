@@ -1,11 +1,11 @@
-/epmsi/:annee/M0/:id/file/:type
-===============================
+/epmsi/mat2a/mco_stc/:annee/M0/:id/file/:type
+=============================================
 
 
 Description
 -----------
 
-Renvoi le fichier ZIP contenant les exports HTML de e-PMSI.
+Renvoie le fichier ZIP contenant les exports HTML de MAT2A MCO.
 
 Type
 ----
@@ -18,7 +18,7 @@ Paramètres
 ========= ===========================================
 Paramètre 
 ========= ===========================================
-annee     Années supportées 2011, 2012.
+annee     Années supportées : 2011, 2012.
 id        id renvoyé par l'api :doc:`send`
 type      exported_zip
 ========= ===========================================
