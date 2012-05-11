@@ -25,6 +25,7 @@ Définition de l'API
    api/genrsa
    api/paprica
    api/mat2a_mco_stc
+   api/mat2a_had
 
 
 Client API
