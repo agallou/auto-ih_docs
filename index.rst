@@ -1,7 +1,7 @@
 documentation de auto-ih
 ========================
 
-auto-ih permet d'automatiser l'utilisation de GENRSA et e-PMSI.
+auto-ih permet d'automatiser l'utilisation de GENRSA, PAPRICA et e-PMSI.
 
 Le code source se trouve sur github : `<https://github.com/agallou/auto-ih>`_.
 
@@ -23,6 +23,7 @@ Définition de l'API
    :maxdepth: 2
 
    api/genrsa
+   api/paprica
    api/epmsi
 
 
