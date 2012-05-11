@@ -1,5 +1,5 @@
-/epmsi/:annee/send
-==================
+/epmsi/:annee/M0/send
+=====================
 
 Description
 -----------
@@ -58,7 +58,7 @@ Exemple
 
 Appel : ::
 
-    curl -F export_genrsa=@export_genrsa.zip http://autoih.localhost/api.php/epmsi/2012/send
+    curl -F export_genrsa=@export_genrsa.zip http://autoih.localhost/api.php/epmsi/2012/M0/send
 
 Retour : ::
 

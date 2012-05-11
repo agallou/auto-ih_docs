@@ -1,5 +1,5 @@
-/genrsa/:annee/:id/status
-=========================
+/genrsa/:annee/M0/:id/status
+============================
 
 Description
 -----------
@@ -42,7 +42,7 @@ Exemple
 
 Appel : ::
 
-  curl  http://autoih.localhost/api.php/genrsa/2012/69a7d9f2c4560159d39731b3c91515a5/status
+  curl  http://autoih.localhost/api.php/genrsa/2012/M0/69a7d9f2c4560159d39731b3c91515a5/status
 
 Retour : ::
 

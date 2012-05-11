@@ -1,5 +1,5 @@
-/genrsa/:annee/send
-===================
+/genrsa/:annee/M0/send
+======================
 
 Description
 -----------
@@ -62,7 +62,7 @@ Exemple
 
 Appel : ::
 
-    curl -F rss=@rum.txt -F autorisations=@autorisations.txt -F anohosp=@anohosp.txt http://autoih.localhost/api.php/genrsa/2012/send
+    curl -F rss=@rum.txt -F autorisations=@autorisations.txt -F anohosp=@anohosp.txt http://autoih.localhost/api.php/genrsa/2012/M0/send
 
 Retour : ::
 
