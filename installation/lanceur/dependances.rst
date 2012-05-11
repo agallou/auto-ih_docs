@@ -8,6 +8,7 @@ Il faut installer :
 *  :ref:`firefox`
 *  :ref:`sahi`
 *  :ref:`genrsa`
+*  :ref:`paprica`
 
 
 .. _dotnetframework:
@@ -51,3 +52,9 @@ GENRSA
 
 GENRSA peut être téléchargé à cette adresse : `<http://download.atih.sante.fr/index.php?lettre=G>`_.
 
+.. _paprica:
+
+PAPRICA
+-------
+
+PAPRICA peut être téléchargé à cette adresse : `<http://download.atih.sante.fr/index.php?lettre=P>`_.
