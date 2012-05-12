@@ -1,7 +1,9 @@
 Client API PHP
 ==============
 
-Le client PHP se trouve sur `Github <https://github.com/agallou/auto-ih_php-api>`_
+Le client PHP se trouve sur Github (`<https://github.com/agallou/auto-ih_php-api>`_).
+
+Voici un exemple qui va passer un fichier de RUM, d'autorisation et anohosp dans GENRSA 2012 (sur la période M0), va récupérer le fichier ZIP exporté de GENRSA en le plaçant dans export_genrsa.zip. Puis va envoyer ce fichier sur MAT2A et récupérer l'export des tableaux de MAT2A dans un fichier zip en la plaçant dans export_epmsi.zip.
 
 .. code-block:: php
 
