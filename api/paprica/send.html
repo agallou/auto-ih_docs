@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>/epmsi/:annee/send &mdash; Documentation auto-ih</title>
+    <title>/paprica/:annee/M0/send &mdash; Documentation auto-ih</title>
     <link rel="stylesheet" href="../../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -23,22 +23,22 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../_static/translations.js"></script>
     <link rel="top" title="Documentation auto-ih" href="../../index.html" />
-    <link rel="up" title="e-PMSI" href="../epmsi.html" />
-    <link rel="next" title="/epmsi/:annee/:id/status" href="status.html" />
-    <link rel="prev" title="e-PMSI" href="../epmsi.html" /> 
+    <link rel="up" title="PAPRICA" href="../paprica.html" />
+    <link rel="next" title="/paprica/:annee/M0/:id/status" href="status.html" />
+    <link rel="prev" title="PAPRICA" href="../paprica.html" /> 
   </head>
   <body>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="status.html" title="/epmsi/:annee/:id/status"
+          <a href="status.html" title="/paprica/:annee/M0/:id/status"
              accesskey="N">suivant</a></li>
         <li class="right" >
-          <a href="../epmsi.html" title="e-PMSI"
+          <a href="../paprica.html" title="PAPRICA"
              accesskey="P">précédent</a> |</li>
         <li><a href="../../index.html">Documentation auto-ih</a> &raquo;</li>
-          <li><a href="../epmsi.html" accesskey="U">e-PMSI</a> &raquo;</li> 
+          <li><a href="../paprica.html" accesskey="U">PAPRICA</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -47,11 +47,11 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="epmsi-annee-send">
-<h1>/epmsi/:annee/send<a class="headerlink" href="#epmsi-annee-send" title="Lien permanent vers ce titre">¶</a></h1>
+  <div class="section" id="paprica-annee-m0-send">
+<h1>/paprica/:annee/M0/send<a class="headerlink" href="#paprica-annee-m0-send" title="Lien permanent vers ce titre">¶</a></h1>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Envoie un fichier sur e-PMSI</p>
+<p>Envoie des fichiers pour passage dans PAPRICA.</p>
 </div>
 <div class="section" id="type">
 <h2>Type<a class="headerlink" href="#type" title="Lien permanent vers ce titre">¶</a></h2>
@@ -71,7 +71,7 @@
 </thead>
 <tbody valign="top">
 <tr><td>annee</td>
-<td>Années supportées 2011, 2012.</td>
+<td>Année supportée : 2012.</td>
 </tr>
 </tbody>
 </table>
@@ -80,8 +80,8 @@
 <h2>Fichiers<a class="headerlink" href="#fichiers" title="Lien permanent vers ce titre">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
-<col width="31%" />
-<col width="69%" />
+<col width="33%" />
+<col width="68%" />
 </colgroup>
 <thead valign="bottom">
 <tr><th class="head">Argument</th>
@@ -89,8 +89,14 @@
 </tr>
 </thead>
 <tbody valign="top">
-<tr><td>export_genrsa</td>
-<td>Fichier ZIP exporté de GENRSA</td>
+<tr><td>rpss</td>
+<td>Fichier de RPSS</td>
+</tr>
+<tr><td>ehpa</td>
+<td>Fichier de conventions EHPA</td>
+</tr>
+<tr><td>anohosp</td>
+<td>Fichier ANOHOSP</td>
 </tr>
 </tbody>
 </table>
@@ -130,7 +136,13 @@
 </thead>
 <tbody valign="top">
 <tr><td>1</td>
-<td>Fichier de exporté de GENRSA manquant</td>
+<td>Fichier de RPSS manquant</td>
+</tr>
+<tr><td>2</td>
+<td>Fichier de conventions EHPA manquant</td>
+</tr>
+<tr><td>3</td>
+<td>Fichier ANOHOSP manquant</td>
 </tr>
 </tbody>
 </table>
@@ -139,7 +151,7 @@
 <div class="section" id="exemple">
 <h2>Exemple<a class="headerlink" href="#exemple" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Appel :</p>
-<div class="highlight-python"><pre>curl -F export_genrsa=@export_genrsa.zip http://autoih.localhost/api.php/epmsi/2012/send</pre>
+<div class="highlight-python"><pre>curl -F rpss=@rpss.txt -F ehpa=@ehpa.txt -F anohosp=@anohosp.txt http://autoih.localhost/api.php/paprica/2012/M0/send</pre>
 </div>
 <p>Retour :</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">{</span><span class="s">&quot;status&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s">&quot;message&quot;</span><span class="p">:</span><span class="s">&quot;OK&quot;</span><span class="p">,</span><span class="s">&quot;content&quot;</span><span class="p">:{</span><span class="s">&quot;id&quot;</span><span class="p">:</span><span class="s">&quot;8c43201682751d9403a335b3dd0eb670&quot;</span><span class="p">}}</span>
@@ -156,7 +168,7 @@
         <div class="sphinxsidebarwrapper">
   <h3><a href="../../index.html">Table des matières</a></h3>
   <ul>
-<li><a class="reference internal" href="#">/epmsi/:annee/send</a><ul>
+<li><a class="reference internal" href="#">/paprica/:annee/M0/send</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#type">Type</a></li>
 <li><a class="reference internal" href="#parametres">Paramètres</a></li>
@@ -172,11 +184,11 @@
 </ul>
 
   <h4>Sujet précédent</h4>
-  <p class="topless"><a href="../epmsi.html"
-                        title="Chapitre précédent">e-PMSI</a></p>
+  <p class="topless"><a href="../paprica.html"
+                        title="Chapitre précédent">PAPRICA</a></p>
   <h4>Sujet suivant</h4>
   <p class="topless"><a href="status.html"
-                        title="Chapitre suivant">/epmsi/:annee/:id/status</a></p>
+                        title="Chapitre suivant">/paprica/:annee/M0/:id/status</a></p>
         </div>
       </div>
       <div class="clearer"></div>
@@ -185,13 +197,13 @@
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="status.html" title="/epmsi/:annee/:id/status"
+          <a href="status.html" title="/paprica/:annee/M0/:id/status"
              >suivant</a></li>
         <li class="right" >
-          <a href="../epmsi.html" title="e-PMSI"
+          <a href="../paprica.html" title="PAPRICA"
              >précédent</a> |</li>
         <li><a href="../../index.html">Documentation auto-ih</a> &raquo;</li>
-          <li><a href="../epmsi.html" >e-PMSI</a> &raquo;</li> 
+          <li><a href="../paprica.html" >PAPRICA</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

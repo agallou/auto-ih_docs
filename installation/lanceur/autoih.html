@@ -53,15 +53,19 @@
 <p>Ci-dessous un exemple de configuration.</p>
 <div class="highlight-yaml"><pre>genrsa_working_dir: "/media/autoih_worker/genrsa/"
 epmsi_working_dir: "/media/autoih_worker/epmsi/"
+paprica_working_dir: "/media/autoih_worker/paprica/"
 sahi_userdata: "C:\Documents and Settings\Administrateur\sahi\userdata"
 sahi_host: "localhost"
 epmsi_user: "userid"
 epmsi_password: "password"
 worker_epmsi_dir: 'X:\epmsi'
 worker_genrsa_dir: 'X:\genrsa'
-genrsa_2012_path: 'C:\Program Files\POP-T2A\GENRSA_2012\WGENRSA.exe'
+worker_paprica_dir: 'X:\paprica'
+genrsa_2012_path: 'C:\Program Files\POP-T2A\GENRSA\WGENRSA.exe'
 genrsa_2011_path: 'C:\Program Files\POP-T2A\GENRSA_2011\WGENRSA.exe'
-finess: "000000000"</pre>
+paprica_2012_path: 'C:\Program Files\ATIH\PAPRICA_2012\PAPRICA.exe'
+finess: "000000000"
+desktop_path: "C:\Documents and Settings\Administrateur\Bureau"</pre>
 </div>
 <div class="section" id="genrsa-working-dir">
 <span id="id1"></span><h2>genrsa_working_dir<a class="headerlink" href="#genrsa-working-dir" title="Lien permanent vers ce titre">¶</a></h2>
@@ -70,6 +74,10 @@ finess: "000000000"</pre>
 <div class="section" id="epmsi-working-dir">
 <span id="id2"></span><h2>epmsi_working_dir<a class="headerlink" href="#epmsi-working-dir" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Chemin vers le dossier ou déposer les fichiers envoyés à l&#8217;API e-PMSI. Doit être accessible en ecriture par apache.</p>
+</div>
+<div class="section" id="paprica-working-dir">
+<h2>paprica_working_dir<a class="headerlink" href="#paprica-working-dir" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Chemin vers le dossier ou déposer les fichiers envoyés à l&#8217;API PAPRICA. Doit être accessible en ecriture par apache.</p>
 </div>
 <div class="section" id="sahi-userdata">
 <h2>sahi_userdata<a class="headerlink" href="#sahi-userdata" title="Lien permanent vers ce titre">¶</a></h2>
@@ -91,6 +99,10 @@ finess: "000000000"</pre>
 <h2>worker_epmsi_dir<a class="headerlink" href="#worker-epmsi-dir" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Utilisé par la machine sous windows. Chemin vers lequel accéder aux fichiers déposés par <a class="reference internal" href="#epmsi-working-dir"><em>epmsi_working_dir</em></a>. Doit être accessible en écriture.</p>
 </div>
+<div class="section" id="worker-paprica-dir">
+<h2>worker_paprica_dir<a class="headerlink" href="#worker-paprica-dir" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Utilisé par la machine sous windows. Chemin vers lequel accéder aux fichiers déposés par <em class="xref std std-ref">paprica_working_dir</em>. Doit être accessible en écriture.</p>
+</div>
 <div class="section" id="worker-genrsa-dir">
 <h2>worker_genrsa_dir<a class="headerlink" href="#worker-genrsa-dir" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Utilisé par la machine sous windows. Chemin vers lequel accéder aux fichiers déposés par <a class="reference internal" href="#genrsa-working-dir"><em>genrsa_working_dir</em></a>. Doit être accessible en écriture.</p>
@@ -103,9 +115,17 @@ finess: "000000000"</pre>
 <h2>genrsa_2011_path<a class="headerlink" href="#genrsa-2011-path" title="Lien permanent vers ce titre">¶</a></h2>
 <p>A chaque année est associée une version de GENRSA (généralement la dernière disponible pour l&#8217;année concernée). Pour cette raison il est préférable de ne pas installer GENRSA dans le dossier par défaut mais de créer un dossier par année pour ainsi avoir plusieurs versions de GENRSA sur la machine. Pour executer GENRSA, auto-ih à besoin de connaitre le chemin vers l&#8217;executable. genrsa_2011_path permet d&#8217;indiquer le chemin vers l&#8217;executable WGENRSA.exe de l&#8217;année concernée.</p>
 </div>
+<div class="section" id="paprica-2012-path">
+<h2>paprica_2012_path<a class="headerlink" href="#paprica-2012-path" title="Lien permanent vers ce titre">¶</a></h2>
+<p>A chaque année est associée une version de PAPRICA (généralement la dernière disponible pour l&#8217;année concernée). Pour cette raison il est préférable de ne pas installer PAPRICA dans le dossier par défaut mais de créer un dossier par année pour ainsi avoir plusieurs versions de PAPRICA sur la machine. Pour executer PAPRICA, auto-ih à besoin de connaitre le chemin vers l&#8217;executable. paprica_2012_path permet d&#8217;indiquer le chemin vers l&#8217;executable PAPRICA.exe de l&#8217;année concernée.</p>
+</div>
 <div class="section" id="finess">
 <h2>finess<a class="headerlink" href="#finess" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Immatriculation de 9 chiffres représentant l&#8217;établissement dont les données seront importées. Doit être le même numéro que celui présent dans les fichiers de RUM importés.</p>
+</div>
+<div class="section" id="desktop-path">
+<h2>desktop_path<a class="headerlink" href="#desktop-path" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Chemin du bureau de l&#8217;utilisateur qui lancera le worker. Sera utiliser pour déposer temporairement les fichiers exportés depuis GENRSA et PAPRIA.</p>
 </div>
 </div>
 
@@ -120,15 +140,19 @@ finess: "000000000"</pre>
 <li><a class="reference internal" href="#">Configuration auto-ih</a><ul>
 <li><a class="reference internal" href="#genrsa-working-dir">genrsa_working_dir</a></li>
 <li><a class="reference internal" href="#epmsi-working-dir">epmsi_working_dir</a></li>
+<li><a class="reference internal" href="#paprica-working-dir">paprica_working_dir</a></li>
 <li><a class="reference internal" href="#sahi-userdata">sahi_userdata</a></li>
 <li><a class="reference internal" href="#sahi-host">sahi_host</a></li>
 <li><a class="reference internal" href="#epmsi-user">epmsi_user</a></li>
 <li><a class="reference internal" href="#epmsi-password">epmsi_password</a></li>
 <li><a class="reference internal" href="#worker-epmsi-dir">worker_epmsi_dir</a></li>
+<li><a class="reference internal" href="#worker-paprica-dir">worker_paprica_dir</a></li>
 <li><a class="reference internal" href="#worker-genrsa-dir">worker_genrsa_dir</a></li>
 <li><a class="reference internal" href="#genrsa-2012-path">genrsa_2012_path</a></li>
 <li><a class="reference internal" href="#genrsa-2011-path">genrsa_2011_path</a></li>
+<li><a class="reference internal" href="#paprica-2012-path">paprica_2012_path</a></li>
 <li><a class="reference internal" href="#finess">finess</a></li>
+<li><a class="reference internal" href="#desktop-path">desktop_path</a></li>
 </ul>
 </li>
 </ul>

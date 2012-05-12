@@ -1,10 +1,10 @@
-/genrsa/:annee/M0/send
-======================
+/paprica/:annee/M0/send
+=======================
 
 Description
 -----------
 
-Envoi des fichiers pour passage dans GENRSA.
+Envoie des fichiers pour passage dans PAPRICA.
 
 Type
 ----
@@ -17,7 +17,7 @@ Paramètres
 ========= =============================
 Paramètre Libellé
 ========= =============================
-annee     Années supportées 2011, 2012.
+annee     Année supportée : 2012.
 ========= =============================
 
 
@@ -27,8 +27,8 @@ Fichiers
 ============= =======================
 Argument      Libellé
 ============= =======================
-rss           Fichier de RUM
-autorisations Fichier d'autorisations
+rpss          Fichier de RPSS
+ehpa          Fichier de conventions EHPA
 anohosp       Fichier ANOHOSP
 ============= =======================
 
@@ -51,8 +51,8 @@ Erreur
 ==== ===============================
 Code Libellé
 ==== ===============================
-1    Fichier de RUM manquant
-2    Fichier d'autorsations manquant
+1    Fichier de RPSS manquant
+2    Fichier de conventions EHPA manquant
 3    Fichier ANOHOSP manquant
 ==== ===============================
 
@@ -62,7 +62,7 @@ Exemple
 
 Appel : ::
 
-    curl -F rss=@rum.txt -F autorisations=@autorisations.txt -F anohosp=@anohosp.txt http://autoih.localhost/api.php/genrsa/2012/M0/send
+    curl -F rpss=@rpss.txt -F ehpa=@ehpa.txt -F anohosp=@anohosp.txt http://autoih.localhost/api.php/paprica/2012/M0/send
 
 Retour : ::
 

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>/genrsa/:annee/M0/:id/status &mdash; Documentation auto-ih</title>
+    <title>/epmsi/mat2a/mco_stc/:annee/M0/:id/status &mdash; Documentation auto-ih</title>
     <link rel="stylesheet" href="../../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -23,22 +23,22 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../_static/translations.js"></script>
     <link rel="top" title="Documentation auto-ih" href="../../index.html" />
-    <link rel="up" title="GENRSA" href="../genrsa.html" />
-    <link rel="next" title="/genrsa/:annee/M0/:id/file/:type" href="file.html" />
-    <link rel="prev" title="/genrsa/:annee/M0/send" href="send.html" /> 
+    <link rel="up" title="MAT2A MCO STC" href="../mat2a_mco_stc.html" />
+    <link rel="next" title="/epmsi/mat2a/mco_stc/:annee/M0/:id/file/:type" href="file.html" />
+    <link rel="prev" title="/epmsi/mat2a/mco_stc/:annee/M0/send" href="send.html" /> 
   </head>
   <body>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="file.html" title="/genrsa/:annee/M0/:id/file/:type"
+          <a href="file.html" title="/epmsi/mat2a/mco_stc/:annee/M0/:id/file/:type"
              accesskey="N">suivant</a></li>
         <li class="right" >
-          <a href="send.html" title="/genrsa/:annee/M0/send"
+          <a href="send.html" title="/epmsi/mat2a/mco_stc/:annee/M0/send"
              accesskey="P">précédent</a> |</li>
         <li><a href="../../index.html">Documentation auto-ih</a> &raquo;</li>
-          <li><a href="../genrsa.html" accesskey="U">GENRSA</a> &raquo;</li> 
+          <li><a href="../mat2a_mco_stc.html" accesskey="U">MAT2A MCO STC</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -47,11 +47,11 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="genrsa-annee-m0-id-status">
-<h1>/genrsa/:annee/M0/:id/status<a class="headerlink" href="#genrsa-annee-m0-id-status" title="Lien permanent vers ce titre">¶</a></h1>
+  <div class="section" id="epmsi-mat2a-mco-stc-annee-m0-id-status">
+<h1>/epmsi/mat2a/mco_stc/:annee/M0/:id/status<a class="headerlink" href="#epmsi-mat2a-mco-stc-annee-m0-id-status" title="Lien permanent vers ce titre">¶</a></h1>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Statut du passage des fichiers dans GENRSA.</p>
+<p>Statut du passage des fichiers sur e-PMSI (MAT2A MCO)</p>
 </div>
 <div class="section" id="type">
 <h2>Type<a class="headerlink" href="#type" title="Lien permanent vers ce titre">¶</a></h2>
@@ -71,10 +71,10 @@
 </thead>
 <tbody valign="top">
 <tr><td>annee</td>
-<td>Années supportées 2011, 2012.</td>
+<td>Années supportées : 2011, 2012.</td>
 </tr>
 <tr><td>id</td>
-<td>id renvoyé par l&#8217;api <a class="reference internal" href="send.html"><em>/genrsa/:annee/M0/send</em></a></td>
+<td>id renvoyé par l&#8217;api <a class="reference internal" href="send.html"><em>/epmsi/mat2a/mco_stc/:annee/M0/send</em></a></td>
 </tr>
 </tbody>
 </table>
@@ -110,7 +110,7 @@
 <div class="section" id="exemple">
 <h2>Exemple<a class="headerlink" href="#exemple" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Appel :</p>
-<div class="highlight-python"><pre>curl  http://autoih.localhost/api.php/genrsa/2012/M0/69a7d9f2c4560159d39731b3c91515a5/status</pre>
+<div class="highlight-python"><pre>curl  http://autoih.localhost/api.php/epmsi/mat2a/mco_stc/2012/M0/69a7d9f2c4560159d39731b3c91515a5/status</pre>
 </div>
 <p>Retour :</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">{</span><span class="s">&quot;status&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s">&quot;message&quot;</span><span class="p">:</span><span class="s">&quot;OK&quot;</span><span class="p">,</span><span class="s">&quot;content&quot;</span><span class="p">:{</span><span class="s">&quot;status&quot;</span><span class="p">:</span><span class="s">&quot;RUNNING&quot;</span><span class="p">}}</span>
@@ -127,7 +127,7 @@
         <div class="sphinxsidebarwrapper">
   <h3><a href="../../index.html">Table des matières</a></h3>
   <ul>
-<li><a class="reference internal" href="#">/genrsa/:annee/M0/:id/status</a><ul>
+<li><a class="reference internal" href="#">/epmsi/mat2a/mco_stc/:annee/M0/:id/status</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#type">Type</a></li>
 <li><a class="reference internal" href="#parametres">Paramètres</a></li>
@@ -142,10 +142,10 @@
 
   <h4>Sujet précédent</h4>
   <p class="topless"><a href="send.html"
-                        title="Chapitre précédent">/genrsa/:annee/M0/send</a></p>
+                        title="Chapitre précédent">/epmsi/mat2a/mco_stc/:annee/M0/send</a></p>
   <h4>Sujet suivant</h4>
   <p class="topless"><a href="file.html"
-                        title="Chapitre suivant">/genrsa/:annee/M0/:id/file/:type</a></p>
+                        title="Chapitre suivant">/epmsi/mat2a/mco_stc/:annee/M0/:id/file/:type</a></p>
         </div>
       </div>
       <div class="clearer"></div>
@@ -154,13 +154,13 @@
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="file.html" title="/genrsa/:annee/M0/:id/file/:type"
+          <a href="file.html" title="/epmsi/mat2a/mco_stc/:annee/M0/:id/file/:type"
              >suivant</a></li>
         <li class="right" >
-          <a href="send.html" title="/genrsa/:annee/M0/send"
+          <a href="send.html" title="/epmsi/mat2a/mco_stc/:annee/M0/send"
              >précédent</a> |</li>
         <li><a href="../../index.html">Documentation auto-ih</a> &raquo;</li>
-          <li><a href="../genrsa.html" >GENRSA</a> &raquo;</li> 
+          <li><a href="../mat2a_mco_stc.html" >MAT2A MCO STC</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

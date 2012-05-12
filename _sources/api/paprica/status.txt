@@ -1,5 +1,5 @@
-/genrsa/:annee/M0/:id/status
-============================
+/paprica/:annee/M0/:id/status
+=============================
 
 Description
 -----------
@@ -17,7 +17,7 @@ Paramètres
 ========= ============================================
 Paramètre 
 ========= ============================================
-annee     Années supportées 2011, 2012.
+annee     Année supportée : 2012.
 id        id renvoyé par l'api :doc:`send`
 ========= ============================================
 
@@ -35,14 +35,14 @@ Succès
 |         | * WAITING |
 |         | * RUNNING |
 |         | * ERROR   |
-+---------+-----------+          
++---------+-----------+
 
 Exemple
 -------
 
 Appel : ::
 
-  curl  http://autoih.localhost/api.php/genrsa/2012/M0/69a7d9f2c4560159d39731b3c91515a5/status
+  curl  http://autoih.localhost/api.php/paprica/2012/M0/69a7d9f2c4560159d39731b3c91515a5/status
 
 Retour : ::
 

@@ -43,7 +43,7 @@
             
   <div class="section" id="documentation-de-auto-ih">
 <h1>documentation de auto-ih<a class="headerlink" href="#documentation-de-auto-ih" title="Lien permanent vers ce titre">¶</a></h1>
-<p>auto-ih permet d&#8217;automatiser l&#8217;utilisation de GENRSA et e-PMSI.</p>
+<p>auto-ih permet d&#8217;automatiser l&#8217;utilisation de GENRSA, PAPRICA et e-PMSI.</p>
 <p>Le code source se trouve sur github : <a class="reference external" href="https://github.com/agallou/auto-ih">https://github.com/agallou/auto-ih</a>.</p>
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Lien permanent vers ce titre">¶</a></h2>
@@ -66,15 +66,27 @@
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="api/genrsa.html">GENRSA</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="api/genrsa/send.html">/genrsa/:annee/send</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/genrsa/status.html">/genrsa/:annee/:id/status</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/genrsa/file.html">/genrsa/:annee/:id/file/:type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/genrsa/send.html">/genrsa/:annee/M0/send</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/genrsa/status.html">/genrsa/:annee/M0/:id/status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/genrsa/file.html">/genrsa/:annee/M0/:id/file/:type</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="api/epmsi.html">e-PMSI</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="api/epmsi/send.html">/epmsi/:annee/send</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/epmsi/status.html">/epmsi/:annee/:id/status</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/epmsi/file.html">/epmsi/:annee/:id/file/:type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/paprica.html">PAPRICA</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/paprica/send.html">/paprica/:annee/M0/send</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/paprica/status.html">/paprica/:annee/M0/:id/status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/paprica/file.html">/paprica/:annee/M0/:id/file/:type</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/mat2a_mco_stc.html">MAT2A MCO STC</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/mat2a_mco_stc/send.html">/epmsi/mat2a/mco_stc/:annee/M0/send</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/mat2a_mco_stc/status.html">/epmsi/mat2a/mco_stc/:annee/M0/:id/status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/mat2a_mco_stc/file.html">/epmsi/mat2a/mco_stc/:annee/M0/:id/file/:type</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/mat2a_had.html">MAT2A HAD</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/mat2a_had/send.html">/epmsi/mat2a/had/:annee/M0/send</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/mat2a_had/status.html">/epmsi/mat2a/had/:annee/M0/:id/status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/mat2a_had/file.html">/epmsi/mat2a/had/:annee/M0/:id/file/:type</a></li>
 </ul>
 </li>
 </ul>

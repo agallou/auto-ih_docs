@@ -1,10 +1,10 @@
-/epmsi/:annee/send
-==================
+/epmsi/mat2a/mco_stc/:annee/M0/send
+=====================
 
 Description
 -----------
 
-Envoie un fichier sur e-PMSI
+Envoie un fichier sur e-PMSI (MAT2A MCO).
 
 Type
 ----
@@ -15,11 +15,11 @@ Paramètres
 ----------
 
 
-========= =============================
+========= ===============================
 Paramètre Libellé
-========= =============================
-annee     Années supportées 2011, 2012.
-========= =============================
+========= ===============================
+annee     Années supportées : 2011, 2012.
+========= ===============================
 
 
 Fichiers
@@ -58,7 +58,7 @@ Exemple
 
 Appel : ::
 
-    curl -F export_genrsa=@export_genrsa.zip http://autoih.localhost/api.php/epmsi/2012/send
+    curl -F export_genrsa=@export_genrsa.zip http://autoih.localhost/api.php/epmsi/mat2a/mco_stc/2012/M0/send
 
 Retour : ::
 
