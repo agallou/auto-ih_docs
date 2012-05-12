@@ -35,3 +35,32 @@ Voici un exemple qui va passer un fichier de RUM, d'autorisation et anohosp dans
       ->waitEnd()
       ->writeFile('exported_zip', 'export_epmsi.zip')
     ;
+
+Il existe a un raccourci sur l'objet Genrsa pour créer un objet Mat2a avec les attributs années période et date déjà renseignés : la méthode createMat2. Le code ci-dessus peut aussi s'écrire de cette façon : 
+
+.. code-block:: php
+
+  <?php
+    require_once 'Autoload.php';
+    AutoihAutoload::register();
+    
+    $genrsa = new Genrsa(new AutoihConnection('http://autoih.localhost/api.php'));
+
+    $genrsa
+      ->setPeriod('M0')
+      ->setYear(2012)
+      ->addFile('rss', 'rss.txt')
+      ->addFile('autorisations', 'autorisations.txt')
+      ->addFile('anohosp', 'anohosp.txt')
+      ->launch()
+      ->waitEnd()
+      ->writeFile('exported_zip', 'export_genrsa.zip')
+    ;
+    
+    $mat2a = $genrsa->createMat2a();
+    $mat2a
+      ->addFile('export_genrsa', 'export_genrsa.zip')
+      ->launch()
+      ->waitEnd()
+      ->writeFile('exported_zip', 'export_epmsi.zip')
+    ;
