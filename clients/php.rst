@@ -1,4 +1,4 @@
-Client API php
+Client API PHP
 ==============
 
 Le client PHP se trouve sur `Github <https://github.com/agallou/auto-ih_php-api>`_
@@ -6,12 +6,12 @@ Le client PHP se trouve sur `Github <https://github.com/agallou/auto-ih_php-api>
 .. code-block:: php
 
   <?php
-    include 'Genrsa.php';
-    include 'Epmsi.php';
-
-    $url = 'http://autoih.localhost/api.php';
+    require_once 'Autoload.php';
+    AutoihAutoload::register();
     
-    $genrsa = new Genrsa($url);
+    $connection = new AutoihConnection('http://autoih.localhost/api.php');
+    
+    $genrsa = new Genrsa($connection);
     $genrsa
       ->setPeriod('M0')
       ->setYear(2012)
@@ -19,20 +19,17 @@ Le client PHP se trouve sur `Github <https://github.com/agallou/auto-ih_php-api>
       ->addFile('autorisations', 'autorisations.txt')
       ->addFile('anohosp', 'anohosp.txt')
       ->launch()
-      ->waitForStatus(array('SUCCESS', 'FAILURE'))
+      ->waitEnd()
+      ->writeFile('exported_zip', 'export_genrsa.zip')
     ;
-
-    file_put_contents('export_genrsa.zip', $genrsa->getFile('exported_zip'));
-
-
-    $epmsi = new Epmsi($url);
-    $epmsi
+    
+    $mat2a = new Mat2a($connection);
+    $mat2a
+      ->setType('mco_stc')
       ->setPeriod('M0')
-      ->setYear(2012)
+      ->setYear('2012')
       ->addFile('export_genrsa', 'export_genrsa.zip')
       ->launch()
-      ->waitForStatus(array('SUCCESS', 'FAILURE'))
+      ->waitEnd()
+      ->writeFile('exported_zip', 'export_epmsi.zip')
     ;
-
-    file_put_contents('export_epmsi.zip', $epmsi->getFile('exported_zip'));
-
