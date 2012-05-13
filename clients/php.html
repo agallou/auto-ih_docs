@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Client API php &mdash; Documentation auto-ih</title>
+    <title>Client API PHP &mdash; Documentation auto-ih</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -42,15 +42,16 @@
           <div class="body">
             
   <div class="section" id="client-api-php">
-<h1>Client API php<a class="headerlink" href="#client-api-php" title="Lien permanent vers ce titre">¶</a></h1>
-<p>Le client PHP se trouve sur <a class="reference external" href="https://github.com/agallou/auto-ih_php-api">Github</a></p>
+<h1>Client API PHP<a class="headerlink" href="#client-api-php" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Le client PHP se trouve sur Github (<a class="reference external" href="https://github.com/agallou/auto-ih_php-api">https://github.com/agallou/auto-ih_php-api</a>).</p>
+<p>Voici un exemple qui va passer un fichier de RUM, d&#8217;autorisation et anohosp dans GENRSA 2012 (sur la période M0), va récupérer le fichier ZIP exporté de GENRSA en le plaçant dans export_genrsa.zip. Puis va envoyer ce fichier sur MAT2A et récupérer l&#8217;export des tableaux de MAT2A dans un fichier zip en la plaçant dans export_epmsi.zip.</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
-  <span class="k">include</span> <span class="s1">&#39;Genrsa.php&#39;</span><span class="p">;</span>
-  <span class="k">include</span> <span class="s1">&#39;Epmsi.php&#39;</span><span class="p">;</span>
+  <span class="k">require_once</span> <span class="s1">&#39;Autoload.php&#39;</span><span class="p">;</span>
+  <span class="nx">AutoihAutoload</span><span class="o">::</span><span class="na">register</span><span class="p">();</span>
 
-  <span class="nv">$url</span> <span class="o">=</span> <span class="s1">&#39;http://autoih.localhost/api.php&#39;</span><span class="p">;</span>
+  <span class="nv">$connection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AutoihConnection</span><span class="p">(</span><span class="s1">&#39;http://autoih.localhost/api.php&#39;</span><span class="p">);</span>
 
-  <span class="nv">$genrsa</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Genrsa</span><span class="p">(</span><span class="nv">$url</span><span class="p">);</span>
+  <span class="nv">$genrsa</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Genrsa</span><span class="p">(</span><span class="nv">$connection</span><span class="p">);</span>
   <span class="nv">$genrsa</span>
     <span class="o">-&gt;</span><span class="na">setPeriod</span><span class="p">(</span><span class="s1">&#39;M0&#39;</span><span class="p">)</span>
     <span class="o">-&gt;</span><span class="na">setYear</span><span class="p">(</span><span class="mi">2012</span><span class="p">)</span>
@@ -58,22 +59,20 @@
     <span class="o">-&gt;</span><span class="na">addFile</span><span class="p">(</span><span class="s1">&#39;autorisations&#39;</span><span class="p">,</span> <span class="s1">&#39;autorisations.txt&#39;</span><span class="p">)</span>
     <span class="o">-&gt;</span><span class="na">addFile</span><span class="p">(</span><span class="s1">&#39;anohosp&#39;</span><span class="p">,</span> <span class="s1">&#39;anohosp.txt&#39;</span><span class="p">)</span>
     <span class="o">-&gt;</span><span class="na">launch</span><span class="p">()</span>
-    <span class="o">-&gt;</span><span class="na">waitForStatus</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;SUCCESS&#39;</span><span class="p">,</span> <span class="s1">&#39;FAILURE&#39;</span><span class="p">))</span>
+    <span class="o">-&gt;</span><span class="na">waitEnd</span><span class="p">()</span>
+    <span class="o">-&gt;</span><span class="na">writeFile</span><span class="p">(</span><span class="s1">&#39;exported_zip&#39;</span><span class="p">,</span> <span class="s1">&#39;export_genrsa.zip&#39;</span><span class="p">)</span>
   <span class="p">;</span>
 
-  <span class="nb">file_put_contents</span><span class="p">(</span><span class="s1">&#39;export_genrsa.zip&#39;</span><span class="p">,</span> <span class="nv">$genrsa</span><span class="o">-&gt;</span><span class="na">getFile</span><span class="p">(</span><span class="s1">&#39;exported_zip&#39;</span><span class="p">));</span>
-
-
-  <span class="nv">$epmsi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Epmsi</span><span class="p">(</span><span class="nv">$url</span><span class="p">);</span>
-  <span class="nv">$epmsi</span>
+  <span class="nv">$mat2a</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Mat2a</span><span class="p">(</span><span class="nv">$connection</span><span class="p">);</span>
+  <span class="nv">$mat2a</span>
+    <span class="o">-&gt;</span><span class="na">setType</span><span class="p">(</span><span class="s1">&#39;mco_stc&#39;</span><span class="p">)</span>
     <span class="o">-&gt;</span><span class="na">setPeriod</span><span class="p">(</span><span class="s1">&#39;M0&#39;</span><span class="p">)</span>
-    <span class="o">-&gt;</span><span class="na">setYear</span><span class="p">(</span><span class="mi">2012</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">setYear</span><span class="p">(</span><span class="s1">&#39;2012&#39;</span><span class="p">)</span>
     <span class="o">-&gt;</span><span class="na">addFile</span><span class="p">(</span><span class="s1">&#39;export_genrsa&#39;</span><span class="p">,</span> <span class="s1">&#39;export_genrsa.zip&#39;</span><span class="p">)</span>
     <span class="o">-&gt;</span><span class="na">launch</span><span class="p">()</span>
-    <span class="o">-&gt;</span><span class="na">waitForStatus</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;SUCCESS&#39;</span><span class="p">,</span> <span class="s1">&#39;FAILURE&#39;</span><span class="p">))</span>
+    <span class="o">-&gt;</span><span class="na">waitEnd</span><span class="p">()</span>
+    <span class="o">-&gt;</span><span class="na">writeFile</span><span class="p">(</span><span class="s1">&#39;exported_zip&#39;</span><span class="p">,</span> <span class="s1">&#39;export_epmsi.zip&#39;</span><span class="p">)</span>
   <span class="p">;</span>
-
-  <span class="nb">file_put_contents</span><span class="p">(</span><span class="s1">&#39;export_epmsi.zip&#39;</span><span class="p">,</span> <span class="nv">$epmsi</span><span class="o">-&gt;</span><span class="na">getFile</span><span class="p">(</span><span class="s1">&#39;exported_zip&#39;</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
