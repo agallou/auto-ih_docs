@@ -1,0 +1,369 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>/epmsi/mat2a/mco_stc/:annee/M0/parse &mdash; Documentation auto-ih</title>
+    <link rel="stylesheet" href="../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="top" title="Documentation auto-ih" href="../../index.html" />
+    <link rel="up" title="MAT2A MCO STC" href="../mat2a_mco_stc.html" />
+    <link rel="next" title="MAT2A HAD" href="../mat2a_had.html" />
+    <link rel="prev" title="/epmsi/mat2a/mco_stc/:annee/M0/:id/file/:type" href="file.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../mat2a_had.html" title="MAT2A HAD"
+             accesskey="N">suivant</a></li>
+        <li class="right" >
+          <a href="file.html" title="/epmsi/mat2a/mco_stc/:annee/M0/:id/file/:type"
+             accesskey="P">précédent</a> |</li>
+        <li><a href="../../index.html">Documentation auto-ih</a> &raquo;</li>
+          <li><a href="../mat2a_mco_stc.html" accesskey="U">MAT2A MCO STC</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="epmsi-mat2a-mco-stc-annee-m0-parse">
+<h1>/epmsi/mat2a/mco_stc/:annee/M0/parse<a class="headerlink" href="#epmsi-mat2a-mco-stc-annee-m0-parse" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Prend en paramètre le fichier ZIP contenant les exports HTML de MAT2A et renvoie un tabeau contenant certaines des valeurs de ces tableaux.</p>
+</div>
+<div class="section" id="type">
+<h2>Type<a class="headerlink" href="#type" title="Lien permanent vers ce titre">¶</a></h2>
+<p>POST</p>
+</div>
+<div class="section" id="fichiers">
+<h2>Fichiers<a class="headerlink" href="#fichiers" title="Lien permanent vers ce titre">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Argument</th>
+<th class="head">&nbsp;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>export_epmsi</td>
+<td>Fichier ZIP exporté de e-PMSI.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="retour">
+<h2>Retour<a class="headerlink" href="#retour" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="a">
+<h3>34_a<a class="headerlink" href="#a" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Tableau 34 A Valorisation - Tableau de Synthèse</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="66%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Clef</th>
+<th class="head">&nbsp;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>nb_sej-transmisa</td>
+<td>Nb Séjours/Séances - Séjours transmis</td>
+</tr>
+<tr><td>montant_br-sej_transmis</td>
+<td>Montant BR - Séjours transmis</td>
+</tr>
+<tr><td>nb_sej-non_fact_am_hors_po</td>
+<td>Nb Séjours/Séances - Séjours non facturable à l&#8217;AM hors PO</td>
+</tr>
+<tr><td>montant_br-non_fact_am_hors_po</td>
+<td>Montant BR - Séjours non facturable à l&#8217;AM hors PO</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="c">
+<h3>34_c<a class="headerlink" href="#c" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Tableau 34 C Valorisation - Récapitulation activité - Valorisation</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Clef</th>
+<th class="head">&nbsp;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>br_tot-coeff_geo</td>
+<td>Montant BR total - Coefficient géographique</td>
+</tr>
+<tr><td>br_tot-coeff_trans</td>
+<td>Montant BR total - Coefficient de transition</td>
+</tr>
+<tr><td>br_tot-valo_ghs</td>
+<td>Montant BR total - Valorisation des GHS</td>
+</tr>
+<tr><td>br_tot-valo_exb</td>
+<td>Montant BR total - Valorisation extrême bas (à déduire)</td>
+</tr>
+<tr><td>br_tot-valo_sej_rehosp_meme_ghm</td>
+<td>Montant BR total - Valorisation séjours avec rehosp dans même GHM (à déduire)</td>
+</tr>
+<tr><td>br_tot-valo_exh</td>
+<td>Montant BR total - Valorisation journées extrême haut</td>
+</tr>
+<tr><td>br_tot-valo_actes_ghs_9615_hospit</td>
+<td>Montant BR total - Valorisation actes GHS 9615 en Hospit.</td>
+</tr>
+<tr><td>br_tot-valo_suppl_radoth_pedia</td>
+<td>Montant BR total - Valorisation suppléments radiothérapie pédiatrique</td>
+</tr>
+<tr><td>br_tot-valo_suppl_antepartum</td>
+<td>Montant BR total - Valorisation suppléments antepartum</td>
+</tr>
+<tr><td>br_tot-valo_actes_rdth_hospit</td>
+<td>Montant BR total - Valorisation actes RDTH en Hospit.</td>
+</tr>
+<tr><td>br_tot-valo_suppl_rea</td>
+<td>Montant BR total - Valorisation suppléments de réanimation</td>
+</tr>
+<tr><td>br_tot-valo_suppl_rea_pedia</td>
+<td>Montant BR total - Valorisation suppléments de réa pédiatrique</td>
+</tr>
+<tr><td>br_tot-valo_suppl_neo_sans_si</td>
+<td>Montant BR total - Valorisation suppléments de néonat sans SI</td>
+</tr>
+<tr><td>br_tot-valo_suppl_neo_avec_si</td>
+<td>Montant BR total - Valorisation suppléments de néonat avec SI</td>
+</tr>
+<tr><td>br_tot-valo_suppl_rea_neo</td>
+<td>Montant BR total - Valorisation suppléments de réanimation néonat</td>
+</tr>
+<tr><td>br_tot-valo_po</td>
+<td>Montant BR total - Valorisation prélévements d&#8217;organe</td>
+</tr>
+<tr><td>br_tot-valo_actes_caiss_hype_sus</td>
+<td>Montant BR total - Valorisation des actes de caissons hyperbares en sus</td>
+</tr>
+<tr><td>br_tot-valo_suppl_dial</td>
+<td>Montant BR total - Valorisation suppléments de dialyse</td>
+</tr>
+<tr><td>br_tot-valo_sc_valides</td>
+<td>Montant BR total - Valorisation suppléments de surveillance continue validés</td>
+</tr>
+<tr><td>br_tot-valo_si_valides</td>
+<td>Montant BR total - Valorisation suppléments de soins intensifs validés</td>
+</tr>
+<tr><td>br_tot-total_valo</td>
+<td>Montant BR total - Total valorisation</td>
+</tr>
+<tr><td>am-coeff_geo</td>
+<td>Montant remboursé AM - Coefficient géographique</td>
+</tr>
+<tr><td>am-coeff_trans</td>
+<td>Montant remboursé AM - Coefficient de transition</td>
+</tr>
+<tr><td>am-valo_ghs</td>
+<td>Montant remboursé AM - Valorisation des GHS</td>
+</tr>
+<tr><td>am-valo_exb</td>
+<td>Montant remboursé AM - Valorisation extrême bas (à déduire)</td>
+</tr>
+<tr><td>am-valo_sej_rehosp_meme_ghm</td>
+<td>Montant remboursé AM - Valorisation séjours avec rehosp dans même GHM (à déduire)</td>
+</tr>
+<tr><td>am-valo_exh</td>
+<td>Montant remboursé AM - Valorisation journées extrême haut</td>
+</tr>
+<tr><td>am-valo_actes_ghs_9615_hospit</td>
+<td>Montant remboursé AM - Valorisation actes GHS 9615 en Hospit.</td>
+</tr>
+<tr><td>am-valo_suppl_radoth_pedia</td>
+<td>Montant remboursé AM - Valorisation suppléments radiothérapie pédiatrique</td>
+</tr>
+<tr><td>am-valo_suppl_antepartum</td>
+<td>Montant remboursé AM - Valorisation suppléments antepartum</td>
+</tr>
+<tr><td>am-valo_actes_rdth_hospit</td>
+<td>Montant remboursé AM - Valorisation actes RDTH en Hospit.</td>
+</tr>
+<tr><td>am-valo_suppl_rea</td>
+<td>Montant remboursé AM - Valorisation suppléments de réanimation</td>
+</tr>
+<tr><td>am-valo_suppl_rea_pedia</td>
+<td>Montant remboursé AM - Valorisation suppléments de réa pédiatrique</td>
+</tr>
+<tr><td>am-valo_suppl_neo_sans_si</td>
+<td>Montant remboursé AM - Valorisation suppléments de néonat sans SI</td>
+</tr>
+<tr><td>am-valo_suppl_neo_avec_si</td>
+<td>Montant remboursé AM - Valorisation suppléments de néonat avec SI</td>
+</tr>
+<tr><td>am-valo_suppl_rea_neo</td>
+<td>Montant remboursé AM - Valorisation suppléments de réanimation néonat</td>
+</tr>
+<tr><td>am-valo_po</td>
+<td>Montant remboursé AM - Valorisation prélévements d&#8217;organe</td>
+</tr>
+<tr><td>am-valo_actes_caiss_hype_sus</td>
+<td>Montant remboursé AM - Valorisation des actes de caissons hyperbares en sus</td>
+</tr>
+<tr><td>am-valo_suppl_dial</td>
+<td>Montant remboursé AM - Valorisation suppléments de dialyse</td>
+</tr>
+<tr><td>am-valo_sc_valides</td>
+<td>Montant remboursé AM - Valorisation suppléments de surveillance continue validés</td>
+</tr>
+<tr><td>am-valo_si_valides</td>
+<td>Montant remboursé AM - Valorisation suppléments de soins intensifs validés</td>
+</tr>
+<tr><td>am-total_valo</td>
+<td>Montant remboursé AM - Total valorisation</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="exemple">
+<h2>Exemple<a class="headerlink" href="#exemple" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Appel :</p>
+<div class="highlight-python"><pre>curl -F export_epmsi=@/export_epmsi.zip http://autoih.localhost/api.php/epmsi/mat2a/mco_stc/2012/M0/parse</pre>
+</div>
+<p>Retour :</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s">&quot;status&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="s">&quot;message&quot;</span><span class="p">:</span> <span class="s">&quot;OK&quot;</span><span class="p">,</span>
+  <span class="s">&quot;content&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s">&quot;34_a&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s">&quot;nb_sej-transmis&quot;</span><span class="p">:</span> <span class="s">&quot;1&quot;</span><span class="p">,</span>
+      <span class="s">&quot;montant_br-sej_transmis&quot;</span><span class="p">:</span> <span class="s">&quot;1057.66&quot;</span><span class="p">,</span>
+      <span class="s">&quot;nb_sej-non_fact_am_hors_po&quot;</span><span class="p">:</span> <span class="s">&quot;1&quot;</span><span class="p">,</span>
+      <span class="s">&quot;montant_br-non_fact_am_hors_po&quot;</span><span class="p">:</span> <span class="s">&quot;1057.66&quot;</span>
+    <span class="p">},</span>
+    <span class="s">&quot;34_c&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s">&quot;br_tot-coeff_geo&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s">&quot;br_tot-coeff_trans&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s">&quot;br_tot-valo_ghs&quot;</span><span class="p">:</span> <span class="s">&quot;0.00&quot;</span><span class="p">,</span>
+      <span class="s">&quot;br_tot-valo_exb&quot;</span><span class="p">:</span> <span class="s">&quot;0.00&quot;</span><span class="p">,</span>
+      <span class="s">&quot;br_tot-valo_sej_rehosp_meme_ghm&quot;</span><span class="p">:</span> <span class="s">&quot;0.00&quot;</span><span class="p">,</span>
+      <span class="s">&quot;br_tot-valo_exh&quot;</span><span class="p">:</span> <span class="s">&quot;0.00&quot;</span><span class="p">,</span>
+      <span class="s">&quot;br_tot-valo_actes_ghs_9615_hospit&quot;</span><span class="p">:</span> <span class="s">&quot;0.00&quot;</span><span class="p">,</span>
+      <span class="s">&quot;br_tot-valo_suppl_radoth_pedia&quot;</span><span class="p">:</span> <span class="s">&quot;0.00&quot;</span><span class="p">,</span>
+      <span class="s">&quot;br_tot-valo_suppl_antepartum&quot;</span><span class="p">:</span> <span class="s">&quot;0.00&quot;</span><span class="p">,</span>
+      <span class="s">&quot;br_tot-valo_actes_rdth_hospit&quot;</span><span class="p">:</span> <span class="s">&quot;0.00&quot;</span><span class="p">,</span>
+      <span class="s">&quot;br_tot-valo_suppl_rea&quot;</span><span class="p">:</span> <span class="s">&quot;0.00&quot;</span><span class="p">,</span>
+      <span class="s">&quot;br_tot-valo_suppl_rea_pedia&quot;</span><span class="p">:</span> <span class="s">&quot;0.00&quot;</span><span class="p">,</span>
+      <span class="s">&quot;br_tot-valo_suppl_neo_sans_si&quot;</span><span class="p">:</span> <span class="s">&quot;0.00&quot;</span><span class="p">,</span>
+      <span class="s">&quot;br_tot-valo_suppl_neo_avec_si&quot;</span><span class="p">:</span> <span class="s">&quot;0.00&quot;</span><span class="p">,</span>
+      <span class="s">&quot;br_tot-valo_suppl_rea_neo&quot;</span><span class="p">:</span> <span class="s">&quot;0.00&quot;</span><span class="p">,</span>
+      <span class="s">&quot;br_tot-valo_po&quot;</span><span class="p">:</span> <span class="s">&quot;0.00&quot;</span><span class="p">,</span>
+      <span class="s">&quot;br_tot-valo_actes_caiss_hype_sus&quot;</span><span class="p">:</span> <span class="s">&quot;0.00&quot;</span><span class="p">,</span>
+      <span class="s">&quot;br_tot-valo_suppl_dial&quot;</span><span class="p">:</span> <span class="s">&quot;0.00&quot;</span><span class="p">,</span>
+      <span class="s">&quot;br_tot-valo_sc_valides&quot;</span><span class="p">:</span> <span class="s">&quot;0.00&quot;</span><span class="p">,</span>
+      <span class="s">&quot;br_tot-valo_si_valides&quot;</span><span class="p">:</span> <span class="s">&quot;0.00&quot;</span><span class="p">,</span>
+      <span class="s">&quot;br_tot-total_valo&quot;</span><span class="p">:</span> <span class="s">&quot;0.00&quot;</span><span class="p">,</span>
+      <span class="s">&quot;am-coeff_geo&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s">&quot;am-coeff_trans&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s">&quot;am-valo_ghs&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s">&quot;am-valo_exb&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s">&quot;am-valo_sej_rehosp_meme_ghm&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s">&quot;am-valo_exh&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s">&quot;am-valo_actes_ghs_9615_hospit&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s">&quot;am-valo_suppl_radoth_pedia&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s">&quot;am-valo_suppl_antepartum&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s">&quot;am-valo_actes_rdth_hospit&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s">&quot;am-valo_suppl_rea&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s">&quot;am-valo_suppl_rea_pedia&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s">&quot;am-valo_suppl_neo_sans_si&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s">&quot;am-valo_suppl_neo_avec_si&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s">&quot;am-valo_suppl_rea_neo&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s">&quot;am-valo_po&quot;</span><span class="p">:</span> <span class="s">&quot;0.00&quot;</span><span class="p">,</span>
+      <span class="s">&quot;am-valo_actes_caiss_hype_sus&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s">&quot;am-valo_suppl_dial&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s">&quot;am-valo_sc_valides&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s">&quot;am-valo_si_valides&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s">&quot;am-total_valo&quot;</span><span class="p">:</span> <span class="s">&quot;0.00&quot;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table des matières</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">/epmsi/mat2a/mco_stc/:annee/M0/parse</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#type">Type</a></li>
+<li><a class="reference internal" href="#fichiers">Fichiers</a></li>
+<li><a class="reference internal" href="#retour">Retour</a><ul>
+<li><a class="reference internal" href="#a">34_a</a></li>
+<li><a class="reference internal" href="#c">34_c</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#exemple">Exemple</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Sujet précédent</h4>
+  <p class="topless"><a href="file.html"
+                        title="Chapitre précédent">/epmsi/mat2a/mco_stc/:annee/M0/:id/file/:type</a></p>
+  <h4>Sujet suivant</h4>
+  <p class="topless"><a href="../mat2a_had.html"
+                        title="Chapitre suivant">MAT2A HAD</a></p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../mat2a_had.html" title="MAT2A HAD"
+             >suivant</a></li>
+        <li class="right" >
+          <a href="file.html" title="/epmsi/mat2a/mco_stc/:annee/M0/:id/file/:type"
+             >précédent</a> |</li>
+        <li><a href="../../index.html">Documentation auto-ih</a> &raquo;</li>
+          <li><a href="../mat2a_mco_stc.html" >MAT2A MCO STC</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+    </div>
+  </body>
+</html>

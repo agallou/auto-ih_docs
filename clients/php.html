@@ -23,14 +23,14 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <link rel="top" title="Documentation auto-ih" href="../index.html" />
-    <link rel="prev" title="/epmsi/mat2a/had/:annee/M0/:id/file/:type" href="../api/mat2a_had/file.html" /> 
+    <link rel="prev" title="/epmsi/mat2a/had/:annee/M0/parse" href="../api/mat2a_had/parse.html" /> 
   </head>
   <body>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../api/mat2a_had/file.html" title="/epmsi/mat2a/had/:annee/M0/:id/file/:type"
+          <a href="../api/mat2a_had/parse.html" title="/epmsi/mat2a/had/:annee/M0/parse"
              accesskey="P">précédent</a></li>
         <li><a href="../index.html">Documentation auto-ih</a> &raquo;</li> 
       </ul>
@@ -75,6 +75,33 @@
   <span class="p">;</span>
 </pre></div>
 </div>
+<p>Il existe a un raccourci sur l&#8217;objet Genrsa pour créer un objet Mat2a avec les attributs années période et date déjà renseignés : la méthode createMat2. Le code ci-dessus peut aussi s&#8217;écrire de cette façon :</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+  <span class="k">require_once</span> <span class="s1">&#39;Autoload.php&#39;</span><span class="p">;</span>
+  <span class="nx">AutoihAutoload</span><span class="o">::</span><span class="na">register</span><span class="p">();</span>
+
+  <span class="nv">$genrsa</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Genrsa</span><span class="p">(</span><span class="k">new</span> <span class="nx">AutoihConnection</span><span class="p">(</span><span class="s1">&#39;http://autoih.localhost/api.php&#39;</span><span class="p">));</span>
+
+  <span class="nv">$genrsa</span>
+    <span class="o">-&gt;</span><span class="na">setPeriod</span><span class="p">(</span><span class="s1">&#39;M0&#39;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">setYear</span><span class="p">(</span><span class="mi">2012</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">addFile</span><span class="p">(</span><span class="s1">&#39;rss&#39;</span><span class="p">,</span> <span class="s1">&#39;rss.txt&#39;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">addFile</span><span class="p">(</span><span class="s1">&#39;autorisations&#39;</span><span class="p">,</span> <span class="s1">&#39;autorisations.txt&#39;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">addFile</span><span class="p">(</span><span class="s1">&#39;anohosp&#39;</span><span class="p">,</span> <span class="s1">&#39;anohosp.txt&#39;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">launch</span><span class="p">()</span>
+    <span class="o">-&gt;</span><span class="na">waitEnd</span><span class="p">()</span>
+    <span class="o">-&gt;</span><span class="na">writeFile</span><span class="p">(</span><span class="s1">&#39;exported_zip&#39;</span><span class="p">,</span> <span class="s1">&#39;export_genrsa.zip&#39;</span><span class="p">)</span>
+  <span class="p">;</span>
+
+  <span class="nv">$mat2a</span> <span class="o">=</span> <span class="nv">$genrsa</span><span class="o">-&gt;</span><span class="na">createMat2a</span><span class="p">();</span>
+  <span class="nv">$mat2a</span>
+    <span class="o">-&gt;</span><span class="na">addFile</span><span class="p">(</span><span class="s1">&#39;export_genrsa&#39;</span><span class="p">,</span> <span class="s1">&#39;export_genrsa.zip&#39;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">launch</span><span class="p">()</span>
+    <span class="o">-&gt;</span><span class="na">waitEnd</span><span class="p">()</span>
+    <span class="o">-&gt;</span><span class="na">writeFile</span><span class="p">(</span><span class="s1">&#39;exported_zip&#39;</span><span class="p">,</span> <span class="s1">&#39;export_epmsi.zip&#39;</span><span class="p">)</span>
+  <span class="p">;</span>
+</pre></div>
+</div>
 </div>
 
 
@@ -84,8 +111,8 @@
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
   <h4>Sujet précédent</h4>
-  <p class="topless"><a href="../api/mat2a_had/file.html"
-                        title="Chapitre précédent">/epmsi/mat2a/had/:annee/M0/:id/file/:type</a></p>
+  <p class="topless"><a href="../api/mat2a_had/parse.html"
+                        title="Chapitre précédent">/epmsi/mat2a/had/:annee/M0/parse</a></p>
         </div>
       </div>
       <div class="clearer"></div>
@@ -94,7 +121,7 @@
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../api/mat2a_had/file.html" title="/epmsi/mat2a/had/:annee/M0/:id/file/:type"
+          <a href="../api/mat2a_had/parse.html" title="/epmsi/mat2a/had/:annee/M0/parse"
              >précédent</a></li>
         <li><a href="../index.html">Documentation auto-ih</a> &raquo;</li> 
       </ul>
