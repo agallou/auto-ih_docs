@@ -51,7 +51,7 @@
 <h1>/paprica/:annee/M0/:id/file/:type<a class="headerlink" href="#paprica-annee-m0-id-file-type" title="Lien permanent vers ce titre">¶</a></h1>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Renvoi le fichier ZIP en sortie de PAPRICA.</p>
+<p>Renvoi le fichier ZIP d&#8217;export, ainsi que les différents fichiers journaux de PAPRICA.</p>
 </div>
 <div class="section" id="type">
 <h2>Type<a class="headerlink" href="#type" title="Lien permanent vers ce titre">¶</a></h2>
@@ -77,10 +77,56 @@
 <td>id renvoyé par l&#8217;api <a class="reference internal" href="send.html"><em>/paprica/:annee/M0/send</em></a></td>
 </tr>
 <tr><td>type</td>
-<td>exported_zip</td>
+<td>type de fichier à récupérer</td>
 </tr>
 </tbody>
 </table>
+<div class="section" id="valeurs-pour-le-parametre-type">
+<h3>Valeurs pour le paramètre type<a class="headerlink" href="#valeurs-pour-le-parametre-type" title="Lien permanent vers ce titre">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Valeur</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>exported_zip</td>
+<td>Fichier ZIP exporté de PAPRICA.</td>
+</tr>
+<tr><td>log</td>
+<td>Compte-rendu de PAPRICA</td>
+</tr>
+<tr><td>dif</td>
+<td>Différence de groupage</td>
+</tr>
+<tr><td>chainage_log</td>
+<td>Compte-rendu de chaînage</td>
+</tr>
+<tr><td>chainage_err</td>
+<td>Erreurs de chaînage</td>
+</tr>
+<tr><td>err_non_bloq</td>
+<td>Visualisation des erreurs non bloquantes de groupage</td>
+</tr>
+<tr><td>err_bloq</td>
+<td>Visualisation des erreurs bloquantes de groupage</td>
+</tr>
+<tr><td>leg</td>
+<td>Synthèse des erreurs de groupage et des contrôles complémentaires</td>
+</tr>
+<tr><td>ehpa_jours_suppr</td>
+<td>EHPA - Journées supprimées car hors convention</td>
+</tr>
+<tr><td>temps</td>
+<td>Temps pris par les différents traitements de PAPRICA</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 
@@ -95,7 +141,10 @@
 <li><a class="reference internal" href="#">/paprica/:annee/M0/:id/file/:type</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#type">Type</a></li>
-<li><a class="reference internal" href="#parametres">Paramètres</a></li>
+<li><a class="reference internal" href="#parametres">Paramètres</a><ul>
+<li><a class="reference internal" href="#valeurs-pour-le-parametre-type">Valeurs pour le paramètre type</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
