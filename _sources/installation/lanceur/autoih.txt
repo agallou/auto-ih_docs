@@ -38,6 +38,8 @@ epmsi_working_dir
 
 Chemin vers le dossier ou déposer les fichiers envoyés à l'API e-PMSI. Doit être accessible en ecriture par apache.
 
+.. _paprica_working_dir:
+
 paprica_working_dir
 -------------------
 
