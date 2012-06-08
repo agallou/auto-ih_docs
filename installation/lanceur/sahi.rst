@@ -3,7 +3,7 @@ Configuration sahi
 
 dans le fichier::
 
-    %appdata%/sahi/userdata/config/userdata.properties 
+    %appdata%/../sahi/userdata/config/userdata.properties 
 
 ajouter::
 
